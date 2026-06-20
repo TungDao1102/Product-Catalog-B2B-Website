@@ -13,8 +13,8 @@
 
 | # | Phase | Status | Dependencies | Notes |
 |---|-------|--------|-------------|-------|
-| 0 | Hoàn thiện Frontend Template | ✓ Done | — | product-detail.html, store.html, category.html, b2b.css |
-| 1 | Nền tảng (Foundation) | Pending | Phase 0 | Laravel + DB + Filament + base layout |
+| 0 | Hoàn thiện Frontend Template | ✓ Verified | — | product-detail.html, store.html, category.html, b2b.css |
+| 1 | Nền tảng (Foundation) | ✓ Verified | Phase 0 | Laravel + DB + Filament + Blade views + Controllers + Routes |
 | 2 | Quản lý sản phẩm (Product Management) | Pending | Phase 1 | Core MVP — CRUD product + frontend |
 | 3 | Nội dung & Liên hệ (Content & Contact) | Pending | Phase 1 | News, projects, contact, quote requests |
 | 4 | Đa ngôn ngữ & SEO | Pending | Phase 2, 3 | i18n + SEO basics |
@@ -22,7 +22,7 @@
 
 ## Current Phase
 
-**Phase 1** (Foundation) — Pending.
+**Phase 2** (Product Management) — Pending.
 
 ## Key Artifacts
 
@@ -38,4 +38,4 @@
 
 ## Next Action
 
-Transition to **Phase 1**: Initialize Laravel project, database schema, Filament admin panel, and convert static templates to Blade layouts.
+Proceed to **Phase 2**: Set up Filament resources for Product, Category, Brand management with CRUD operations and validation. Create database seeders for initial data.
