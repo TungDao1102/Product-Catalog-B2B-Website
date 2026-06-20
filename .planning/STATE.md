@@ -13,7 +13,7 @@
 
 | # | Phase | Status | Dependencies | Notes |
 |---|-------|--------|-------------|-------|
-| 0 | Hoàn thiện Frontend Template | Pending | — | Static HTML: product detail, filter, components |
+| 0 | Hoàn thiện Frontend Template | ✓ Done | — | product-detail.html, store.html, category.html, b2b.css |
 | 1 | Nền tảng (Foundation) | Pending | Phase 0 | Laravel + DB + Filament + base layout |
 | 2 | Quản lý sản phẩm (Product Management) | Pending | Phase 1 | Core MVP — CRUD product + frontend |
 | 3 | Nội dung & Liên hệ (Content & Contact) | Pending | Phase 1 | News, projects, contact, quote requests |
@@ -22,7 +22,7 @@
 
 ## Current Phase
 
-**None** — Awaiting transition to Phase 0.
+**Phase 1** (Foundation) — Pending.
 
 ## Key Artifacts
 
@@ -34,8 +34,8 @@
 | Roadmap | `.planning/ROADMAP.md` | ✓ Done |
 | State | `.planning/STATE.md` | ✓ Done |
 | Config | `.planning/config.json` | ✓ Done |
-| Frontend Template | `template-frontend/` | ✓ Existing |
+| Frontend Template | `template-frontend/` | ✓ Enhanced |
 
 ## Next Action
 
-Transition to **Phase 0**: Xây dựng product detail page, category filter, components còn thiếu trong template-frontend bằng static HTML/CSS/JS.
+Transition to **Phase 1**: Initialize Laravel project, database schema, Filament admin panel, and convert static templates to Blade layouts.
