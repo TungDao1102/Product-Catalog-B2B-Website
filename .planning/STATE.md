@@ -13,7 +13,8 @@
 
 | # | Phase | Status | Dependencies | Notes |
 |---|-------|--------|-------------|-------|
-| 1 | Nền tảng (Foundation) | Pending | — | Laravel + DB + Filament + base layout |
+| 0 | Hoàn thiện Frontend Template | Pending | — | Static HTML: product detail, filter, components |
+| 1 | Nền tảng (Foundation) | Pending | Phase 0 | Laravel + DB + Filament + base layout |
 | 2 | Quản lý sản phẩm (Product Management) | Pending | Phase 1 | Core MVP — CRUD product + frontend |
 | 3 | Nội dung & Liên hệ (Content & Contact) | Pending | Phase 1 | News, projects, contact, quote requests |
 | 4 | Đa ngôn ngữ & SEO | Pending | Phase 2, 3 | i18n + SEO basics |
@@ -21,7 +22,7 @@
 
 ## Current Phase
 
-**None** — Awaiting transition to Phase 1.
+**None** — Awaiting transition to Phase 0.
 
 ## Key Artifacts
 
@@ -37,4 +38,4 @@
 
 ## Next Action
 
-Transition to **Phase 1**: Initialize Laravel project, database schema, Filament admin, and base Blade layout.
+Transition to **Phase 0**: Xây dựng product detail page, category filter, components còn thiếu trong template-frontend bằng static HTML/CSS/JS.
