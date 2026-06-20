@@ -105,18 +105,24 @@
                     <div class="product-gallery wow fadeInUp" data-wow-delay="0.1s">
                         <div class="product-gallery-main">
                             <img src="img/product-1.jpg" alt="Máy soi chiếu an ninh X-1000" id="mainImage">
+                            <button class="gallery-nav gallery-nav-prev" onclick="prevImage()" aria-label="Ảnh trước">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button class="gallery-nav gallery-nav-next" onclick="nextImage()" aria-label="Ảnh tiếp">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
                         </div>
-                        <div class="product-gallery-thumbs">
-                            <div class="product-thumb active" onclick="changeImage(this, 'img/product-1.jpg')">
+                        <div class="product-gallery-thumbs" id="galleryThumbs">
+                            <div class="product-thumb active" onclick="selectImage(0)">
                                 <img src="img/product-1.jpg" alt="Ảnh 1">
                             </div>
-                            <div class="product-thumb" onclick="changeImage(this, 'img/product-2.jpg')">
+                            <div class="product-thumb" onclick="selectImage(1)">
                                 <img src="img/product-2.jpg" alt="Ảnh 2">
                             </div>
-                            <div class="product-thumb" onclick="changeImage(this, 'img/product-3.jpg')">
+                            <div class="product-thumb" onclick="selectImage(2)">
                                 <img src="img/product-3.jpg" alt="Ảnh 3">
                             </div>
-                            <div class="product-thumb" onclick="changeImage(this, 'img/product-4.jpg')">
+                            <div class="product-thumb" onclick="selectImage(3)">
                                 <img src="img/product-4.jpg" alt="Ảnh 4">
                             </div>
                         </div>
@@ -396,14 +402,30 @@
 
     <!-- Product Detail JS -->
     <script>
-        function changeImage(el, src) {
-            // Update main image
-            document.getElementById('mainImage').src = src;
-            // Update active state on thumbnails
-            document.querySelectorAll('.product-thumb').forEach(function(thumb) {
-                thumb.classList.remove('active');
+        var galleryImages = [
+            'img/product-1.jpg',
+            'img/product-2.jpg',
+            'img/product-3.jpg',
+            'img/product-4.jpg'
+        ];
+        var currentIndex = 0;
+
+        function selectImage(index) {
+            currentIndex = index;
+            document.getElementById('mainImage').src = galleryImages[currentIndex];
+            document.querySelectorAll('.product-thumb').forEach(function(thumb, i) {
+                thumb.classList.toggle('active', i === currentIndex);
             });
-            el.classList.add('active');
+        }
+
+        function nextImage() {
+            var next = (currentIndex + 1) % galleryImages.length;
+            selectImage(next);
+        }
+
+        function prevImage() {
+            var prev = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            selectImage(prev);
         }
     </script>
 

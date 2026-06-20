@@ -5,8 +5,7 @@
 
 /*** Product Gallery ***/
 .product-gallery {
-    position: sticky;
-    top: 100px;
+    position: relative;
 }
 
 .product-gallery-main {
@@ -16,11 +15,48 @@
     border: 1px solid #e9ecef;
 }
 
+.product-gallery-main {
+    position: relative;
+}
+
 .product-gallery-main img {
     width: 100%;
     height: auto;
     display: block;
     cursor: zoom-in;
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.85);
+    border: none;
+    color: var(--dark);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .3s;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+
+.gallery-nav:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.gallery-nav-prev {
+    left: 12px;
+}
+
+.gallery-nav-next {
+    right: 12px;
 }
 
 .product-gallery-thumbs {
