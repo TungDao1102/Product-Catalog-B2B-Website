@@ -62,31 +62,34 @@ Bootstrap 5 spacing system (base unit `0.25rem` = **4px** at default 16px font-s
 - Product card image height: 220px (desktop), 180px (tablet), 200px (mobile) — defined in b2b.css
 - Product thumb size: 80×80px (desktop), 60×60px (mobile)
 - Gallery nav buttons: 40×40px circle
-- Action buttons (`btn-quote`): `padding: 14px 36px` with 30px border-radius
+- Action buttons (`btn-quote`): `padding: 12px 36px` with 30px border-radius (12px is a multiple of 4, replacing the original 14px)
 - Filter sidebar sticky top offset: `top: 100px`
 
 ---
 
 ## Typography
 
-System uses **two font families** with distinct roles:
+**Constraint:** Maximum 4 font sizes, maximum 2 font weights. Visual differentiation is delegated to font-family choice and color contrast.
 
-| Role | Font | Size | Weight | Line Height | Evidence |
-|------|------|------|--------|-------------|----------|
-| Body | Open Sans | 16px (Bootstrap default) | 400 (Regular) | 1.5 (Bootstrap default) | Google Fonts link |
-| Body small | Open Sans | 14px (`.9rem`) | 400 / 500 | 1.6 | `product-card-b2b .card-text`, `.product-code` |
-| Label | Open Sans | 15px (`.95rem`) | 500 (Medium) / 600 (Semibold) | 1.4 | `.product-meta-label`, filter section h5 |
-| Button | Open Sans | 16-17px (1.05rem) | 600 (Semibold) | 1.2 | `.btn-quote` |
-| Section Title h2 | Playfair Display | 26px (1.65rem) | 700 (Bold) | 1.2 | `.section-title-b2b h2` |
-| Section Subtitle | Open Sans | 15px (`.95rem`) | 400 (Regular) | 1.5 | `.section-title-b2b p` |
-| Page Header h1 | Playfair Display | 42px (display-2) | 700 (Bold) | 1.2 | template-frontend page-header |
-| Product Detail Name h1 | Open Sans | 28px (1.75rem) | 700 (Bold) | 1.3 | `.product-info-sidebar h1` |
-| Product Card Title h5 | Open Sans | 18px (1.1rem) | 600 (Semibold) | 1.4 | `.product-card-b2b .card-title` |
-| Product Card Brand | Open Sans | 13px (`.82rem`) | 500 (Medium) | 1.2 | `.product-card-b2b .card-brand` |
-| Section Content h3 | Open Sans | 22px (1.35rem) | 600 (Semibold) | 1.3 | `.product-description h3`, `.product-specs-section h3` |
-| Related Products h2 | Open Sans | 24px (1.5rem) | 700 (Bold) | 1.2 | `.related-products h2` |
-| Spec Table Header | Open Sans | 15px (`.95rem`) | 600 (Semibold) | 1.2 | `.product-specs th` |
-| Spec Table Cell | Open Sans | 15px (`.92rem`) | 600 (Label) / 400 (Value) | 1.4 | `.product-specs td` |
+**Scale:** 14px (small/label), 16px (body), 22px (heading), 28px (display)
+**Weights:** 400 (Regular), 600 (Semibold)
+**Font Families:** Open Sans (general purpose), Playfair Display (decorative display — section titles, page headers)
+
+| Role | Size | Weight | Line Height | Font | Differentiated By |
+|------|------|--------|-------------|------|-------------------|
+| Page Header / Display | 28px | 600 | 1.2 | Playfair Display | Font family + size |
+| Product Detail Name | 28px | 600 | 1.3 | Open Sans | Font family (vs page header) |
+| Section Title (h2) | 28px | 600 | 1.2 | Playfair Display | Font family |
+| Section Content (h3) | 22px | 600 | 1.3 | Open Sans | Size (smaller than titles) |
+| Related Products (h2) | 22px | 600 | 1.2 | Open Sans | Size (same as h3, differentiated by color/context) |
+| Body text | 16px | 400 | 1.5 | Open Sans | Default type |
+| Button text | 16px | 600 | 1.2 | Open Sans | Weight (semibold vs regular body) |
+| Product Card Title | 16px | 600 | 1.4 | Open Sans | Weight (vs body) |
+| Card Text / Description | 14px | 400 | 1.6 | Open Sans | Size (smaller than body) |
+| Label / Meta / Brand | 14px | 600 | 1.2 | Open Sans | Weight (semibold vs regular) |
+| Spec Table Header | 14px | 600 | 1.2 | Open Sans | Weight (semibold) |
+| Spec Table Cell | 14px | 400 | 1.4 | Open Sans | Weight (regular) |
+| Section Subtitle | 14px | 400 | 1.5 | Open Sans | Same as card-text, differentiated by color (muted) |
 
 **Filament Admin Panel:**
 - Uses Filament v5 default typography (Inter / Tailwind-based)
@@ -96,6 +99,14 @@ System uses **two font families** with distinct roles:
 ---
 
 ## Color
+
+The 60/30/10 split governs the visual weight distribution across all frontend pages:
+
+| Split | Role | Value | Coverage |
+|-------|------|-------|----------|
+| **60% — Dominant** | Background surfaces, body text, headings | Dark #252C30 (text), White #FFFFFF + Light #F5F8F2 (backgrounds) | Page background, content areas, text |
+| **30% — Secondary** | Cards, sidebars, navigation bars, footer | White #FFFFFF (cards/sidebars), Dark #252C30 (nav/footer background), Light #F5F8F2 (alt rows) | Product cards, filter sidebar, navbar, footer |
+| **10% — Accent** | Interactive elements, CTAs, active states | Primary #88B44E (green) | Buttons, links, active states, badges |
 
 ### Frontend (Blade + Bootstrap 5)
 
@@ -133,6 +144,22 @@ The primary green (#88B44E) is reserved for:
 9. **Brand Name**: Product card brand text uppercase
 
 **Never** use primary green for destructive actions, disabled states, or error messages.
+
+---
+
+## Screen Focal Points
+
+Each main screen has a single primary visual anchor that draws the user's attention first:
+
+| Screen | Focal Point | Rationale |
+|--------|-------------|-----------|
+| **Homepage** | OWL Carousel hero banner (full-width image with overlay CTA) | Largest element, animation draws eye, contains primary navigation CTA "Xem sản phẩm" |
+| **Category / Product List** | Product card grid (the 3-column layout of `.product-card-b2b` cards) | Content grid occupies 75% of page width; cards with images + text are the reason for the page |
+| **Product Detail** | Product gallery main image (`.product-gallery-main`, left column, ~58% width) | The 600×600px auto-resized image is the largest single element on the page; secondary anchor is the "Yêu cầu báo giá" CTA in the sticky sidebar |
+| **Search Results** | Search input in the filter sidebar (pre-filled with query) | The search box with the user's query is visually highlighted; product grid below shows matching results |
+| **Admin — Category/Brand/Product Form** | The form's first required field (name/SKU) with validation state | Filament focuses the first field automatically; red validation borders provide immediate error feedback |
+
+**Design principle:** Every page has exactly one primary focal point. Secondary elements (sidebars, breadcrumbs, related products) are visually subordinate — smaller, muted, or positioned below the fold.
 
 ---
 
