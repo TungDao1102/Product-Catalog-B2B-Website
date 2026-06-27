@@ -63,18 +63,32 @@
   - CategoryResource — quản lý danh mục đa cấp
   - BrandResource — quản lý hãng sản xuất
   - ProductResource — quản lý sản phẩm (tên, mã, danh mục, hãng, mô tả, hình ảnh, brochure PDF)
-  - ProductSpecification — thông số kỹ thuật dạng thuộc tính- giá trị (repeater/has-many)
+  - Thông số kỹ thuật dạng key-value via Repeater (JSON column)
 - **Frontend (Blade):**
   - Trang chủ động — banner slider, danh mục nổi bật, sản phẩm tiêu biểu, dự án, tin tức mới
-  - Trang danh mục sản phẩm — product grid, sidebar danh mục, breadcrumb
+  - Trang danh mục sản phẩm — product grid, sidebar danh mục dạng cây, breadcrumb
   - Trang chi tiết sản phẩm — hình ảnh, thông số, PDF tải về, nút "Yêu cầu báo giá"
   - Tìm kiếm sản phẩm (tên, mã, hãng)
+- **Tests:**
+  - Filament CRUD tests: Category, Brand, Product + Product specs format
+  - Frontend HTTP tests: Homepage, Category, ProductDetail, Search, CardRendering
 
 **Dependencies:** Phase 1
+
+**Plans:** 5 plans
+
+| Plan | Wave | Type | Objective |
+|------|------|------|-----------|
+| 02-01 | 1 | execute | Foundation: install intervention/image-laravel, fill Category/Brand/Product models |
+| 02-02 | 2 | execute | Database Seeders: CategorySeeder (3-level), BrandSeeder, ProductSeeder |
+| 02-03 | 2 | execute | Category & Brand Filament Resources with CRUD tests |
+| 02-04 | 3 | execute | Product Filament Resource with cascading selects, FileUpload, Repeater, Intervention resize |
+| 02-05 | 3 | execute | Frontend fixes (specs format), category tree sidebar, 5 HTTP test files |
 
 **Verification:**
 - Admin: thêm/sửa/xóa danh mục, brand, sản phẩm thành công
 - Frontend: danh mục hiển thị đúng cây, sản phẩm hiển thị đầy đủ thông tin
+- Tất cả tests pass: `php artisan test --filter=Filament && php artisan test --filter='Tests\\Feature\\Http'`
 - Responsive: desktop/tablet/mobile
 
 ---
