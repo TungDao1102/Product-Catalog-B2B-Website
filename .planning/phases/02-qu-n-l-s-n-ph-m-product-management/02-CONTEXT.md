@@ -32,12 +32,12 @@ CRUD danh mục/hãng/sản xuất và sản phẩm trong Filament admin panel, 
 ### Product Images
 - **D-04:** Multiple images per product — 1 ảnh thumbnail đại diện + gallery (các ảnh phụ)
 - **D-05:** Lưu trên local filesystem (phù hợp shared hosting, không cần cloud)
-- **D-06:** Auto-resize ảnh upload xuống 600x600 px dùng Intervention Image
+- **D-06:** Auto-resize ảnh upload xuống 600x600 px dùng Intervention Image (cần cài `intervention/image-laravel`)
 
 ### Technical Specifications
 - **D-07:** Free-form key-value pairs (attribute_name + attribute_value) — không cần predefined attributes per category
 - **D-08:** Filament Repeater cho admin nhập thông số (thêm/xóa dòng động)
-- **D-09:** Dùng migration `product_specifications` đã tạo ở Phase 1 — không cần schema thay đổi
+- **D-09:** (UPDATED from research) Dùng JSON column `products.technical_specs` có sẵn — không cần migration mới. ProductSpecification model/resource không cần tạo riêng. Blade views parse JSON trực tiếp.
 
 ### Product Search
 - **D-10:** MySQL LIKE query trên tên, mã sản phẩm, tên hãng
