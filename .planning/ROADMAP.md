@@ -35,7 +35,7 @@
 
 ---
 
-### Phase 2: Nền tảng (Foundation)
+### Phase 1: Nền tảng (Foundation)
 **Mục tiêu:** Dựng Laravel project, database, Filament admin, base layout Blade.
 
 **Deliverables:**
@@ -55,7 +55,7 @@
 
 ---
 
-### Phase 3: Quản lý sản phẩm (Product Management)
+### Phase 2: Quản lý sản phẩm (Product Management)
 **Mục tiêu:** CRUD sản phẩm trong admin + frontend hiển thị sản phẩm.
 
 **Deliverables:**
@@ -70,7 +70,7 @@
   - Trang chi tiết sản phẩm — hình ảnh, thông số, PDF tải về, nút "Yêu cầu báo giá"
   - Tìm kiếm sản phẩm (tên, mã, hãng)
 
-**Dependencies:** Phase 2
+**Dependencies:** Phase 1
 
 **Verification:**
 - Admin: thêm/sửa/xóa danh mục, brand, sản phẩm thành công
@@ -79,7 +79,7 @@
 
 ---
 
-### Phase 4: Nội dung & Liên hệ (Content & Contact) (Content & Contact)
+### Phase 3: Nội dung & Liên hệ (Content & Contact)
 **Mục tiêu:** Tin tức, dự án, form liên hệ, yêu cầu báo giá.
 
 **Deliverables:**
@@ -97,7 +97,7 @@
   - Gửi email admin khi có yêu cầu báo giá / liên hệ mới
   - Gửi email xác nhận tự động cho khách hàng
 
-**Dependencies:** Phase 2
+**Dependencies:** Phase 1
 
 **Verification:**
 - Form liên hệ gửi được, admin nhận email
@@ -106,7 +106,7 @@
 
 ---
 
-### Phase 5: Đa ngôn ngữ & SEO (Multi-language & SEO)
+### Phase 4: Đa ngôn ngữ & SEO (Multi-language & SEO)
 **Mục tiêu:** Kiến trúc i18n + tối ưu SEO cơ bản.
 
 **Deliverables:**
@@ -123,7 +123,7 @@
   - robots.txt
   - Open Graph tags cơ bản
 
-**Dependencies:** Phase 3, Phase 4
+**Dependencies:** Phase 2, Phase 3
 
 **Verification:**
 - Chuyển đổi ngôn ngữ trên frontend hoạt động
@@ -132,7 +132,7 @@
 
 ---
 
-### Phase 6: Hoàn thiện & Triển khai (Polish & Deploy)
+### Phase 5: Hoàn thiện & Triển khai (Polish & Deploy)
 **Mục tiêu:** Hoàn thiện, tối ưu, chuẩn bị shared hosting.
 
 **Deliverables:**
@@ -144,7 +144,7 @@
 - Deployment checklist: DB migration, env config, public symlink
 - Document: hướng dẫn đăng nhập admin + quản lý nội dung cơ bản
 
-**Dependencies:** Phase 3, Phase 4, Phase 5
+**Dependencies:** Phase 2, Phase 3, Phase 4
 
 **Verification:**
 - Lighthouse Desktop ≥ 80, Mobile ≥ 65
@@ -155,7 +155,7 @@
 
 ## Milestone: v1.0
 
-**Gồm:** Phase 0 → Phase 6
+**Gồm:** Phase 0 → Phase 5
 
 **Definition of Done:**
 1. Tất cả phases hoàn thành
