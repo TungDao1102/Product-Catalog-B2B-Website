@@ -10,14 +10,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto">
-                    <a href="{{ route('home') }}" class="nav-item nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Trang chủ</a>
-                    <a href="{{ route('products.index') }}" class="nav-item nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}">Sản phẩm</a>
+                    <a href="{{ route('home') }}" class="nav-item nav-link {{ request()->routeIs('home') ? 'active' : '' }}">{{ __('navigation.home') }}</a>
+                    <a href="{{ route('products.index') }}" class="nav-item nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}">{{ __('navigation.products') }}</a>
                     @php
                         $parentCategories = \App\Models\Category::whereNull('parent_id')->where('is_active', true)->get();
                     @endphp
                     @if($parentCategories->count() > 0)
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('categories.*') ? 'active' : '' }}" data-bs-toggle="dropdown">Danh mục</a>
+                        <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('categories.*') ? 'active' : '' }}" data-bs-toggle="dropdown">{{ __('navigation.categories') }}</a>
                         <div class="dropdown-menu bg-light rounded-0 m-0">
                             @foreach($parentCategories as $cat)
                                 <a href="{{ route('categories.show', $cat->slug) }}" class="dropdown-item">{{ $cat->name }}</a>
@@ -25,11 +25,12 @@
                         </div>
                     </div>
                     @endif
-                    <a href="{{ route('posts.index') }}" class="nav-item nav-link {{ request()->routeIs('posts.*') ? 'active' : '' }}">Tin tức</a>
-                    <a href="{{ route('projects.index') }}" class="nav-item nav-link {{ request()->routeIs('projects.*') ? 'active' : '' }}">Dự án</a>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Liên hệ</a>
+                    <a href="{{ route('posts.index') }}" class="nav-item nav-link {{ request()->routeIs('posts.*') ? 'active' : '' }}">{{ __('navigation.posts') }}</a>
+                    <a href="{{ route('projects.index') }}" class="nav-item nav-link {{ request()->routeIs('projects.*') ? 'active' : '' }}">{{ __('navigation.projects') }}</a>
+                    <a href="{{ route('contact') }}" class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">{{ __('navigation.contact') }}</a>
                 </div>
                 <div class="border-start ps-4 d-none d-lg-block">
+                    @include('partials.language-switcher')
                     <a href="{{ route('products.index') }}" class="btn btn-sm p-0"><i class="fa fa-search"></i></a>
                 </div>
             </div>
