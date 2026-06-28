@@ -58,7 +58,14 @@ class ProductController extends Controller
             ->get();
         $brands = Brand::where('is_active', true)->get();
 
-        return view('products.index', compact('products', 'categories', 'brands'));
+        $seo = [
+            'title' => __('products.page_title'),
+            'description' => __('products.page_description'),
+            'image' => asset('img/og-default.jpg'),
+            'type' => 'website',
+        ];
+
+        return view('products.index', compact('products', 'categories', 'brands', 'seo'));
     }
 
     public function show($slug)
@@ -80,6 +87,13 @@ class ProductController extends Controller
             ->take(4)
             ->get();
 
-        return view('products.show', compact('product', 'relatedProducts'));
+        $seo = [
+            'title' => $product->getTranslation('name', app()->getLocale()),
+            'description' => strip_tags($product->getTranslation('short_description', app()->getLocale()) ?? ''),
+            'image' => isset($product->images[0]) ? asset('storage/' . $product->images[0]) : asset('img/og-default.jpg'),
+            'type' => 'product',
+        ];
+
+        return view('products.show', compact('product', 'relatedProducts', 'seo'));
     }
 }

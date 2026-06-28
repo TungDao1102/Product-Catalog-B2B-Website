@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', config('app.name')) - {{ config('app.name') }}</title>
+    <title>@yield('title', $seo['title'] ?? config('app.name')) - {{ config('app.name') }}</title>
     <meta name="keywords" content="@yield('meta_keywords')">
-    <meta name="description" content="@yield('meta_description')">
+    <meta name="description" content="@yield('meta_description', $seo['description'] ?? '')">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="@yield('og_title', config('app.name'))" />
-    <meta property="og:description" content="@yield('og_description', __('seo.home_description'))" />
-    <meta property="og:image" content="@yield('og_image', asset('img/og-default.jpg'))" />
-    <meta property="og:type" content="@yield('og_type', 'website')" />
+    <meta property="og:title" content="@yield('og_title', $seo['title'] ?? config('app.name'))" />
+    <meta property="og:description" content="@yield('og_description', $seo['description'] ?? __('seo.home_description'))" />
+    <meta property="og:image" content="@yield('og_image', $seo['image'] ?? asset('img/og-default.jpg'))" />
+    <meta property="og:type" content="@yield('og_type', $seo['type'] ?? 'website')" />
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale() === 'vi' ? 'vi_VN' : 'en_US') }}" />
 

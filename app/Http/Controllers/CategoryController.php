@@ -62,6 +62,13 @@ class CategoryController extends Controller
 
         $products = $query->paginate(9)->withQueryString();
 
-        return view('categories.show', compact('category', 'subCategories', 'rootCategories', 'products'));
+        $seo = [
+            'title' => $category->getTranslation('name', app()->getLocale()),
+            'description' => strip_tags($category->getTranslation('description', app()->getLocale()) ?? ''),
+            'image' => $category->image ? asset('storage/' . $category->image) : asset('img/og-default.jpg'),
+            'type' => 'website',
+        ];
+
+        return view('categories.show', compact('category', 'subCategories', 'rootCategories', 'products', 'seo'));
     }
 }

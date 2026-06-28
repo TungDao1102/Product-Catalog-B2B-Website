@@ -13,7 +13,14 @@ class ContactController extends Controller
 {
     public function show()
     {
-        return view('contact');
+        $seo = [
+            'title' => __('navigation.contact'),
+            'description' => __('seo.contact_description'),
+            'image' => asset('img/og-default.jpg'),
+            'type' => 'website',
+        ];
+
+        return view('contact', compact('seo'));
     }
 
     public function store(Request $request)

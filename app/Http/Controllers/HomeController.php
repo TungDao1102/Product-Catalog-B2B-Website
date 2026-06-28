@@ -30,6 +30,13 @@ class HomeController extends Controller
             ->take(6)
             ->get();
 
-        return view('home.index', compact('featuredProducts', 'latestProducts'));
+        $seo = [
+            'title' => __('seo.home_title'),
+            'description' => __('seo.home_description'),
+            'image' => asset('img/og-default.jpg'),
+            'type' => 'website',
+        ];
+
+        return view('home.index', compact('featuredProducts', 'latestProducts', 'seo'));
     }
 }

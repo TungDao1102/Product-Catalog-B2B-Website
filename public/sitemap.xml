@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+    <url>
+    <loc>http://localhost/vi</loc>
+    <xhtml:link rel="alternate" hreflang="/vi" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="/en" href="http://localhost/en" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+            </url>
+    <url>
+    <loc>http://localhost/en</loc>
+    <xhtml:link rel="alternate" hreflang="/vi" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="/en" href="http://localhost/en" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/lien-he</loc>
+    <xhtml:link rel="alternate" hreflang="/vi/lien-he" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="/en/contact" href="http://localhost/en" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+            </url>
+    <url>
+    <loc>http://localhost/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="/vi/lien-he" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="/en/contact" href="http://localhost/en" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/san-pham/may-soi-chieu-x-ray-truong-bay</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/san-pham/may-soi-chieu-x-ray-truong-bay" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/san-pham/may-soi-chieu-x-ray-truong-bay" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/san-pham/may-soi-chieu-x-ray-di-dong</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/san-pham/may-soi-chieu-x-ray-di-dong" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/san-pham/may-soi-chieu-x-ray-di-dong" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/san-pham/cua-do-kim-loai-6-vung</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/san-pham/cua-do-kim-loai-6-vung" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/san-pham/cua-do-kim-loai-6-vung" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/san-pham/camera-ip-hikvision-2mp</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/san-pham/camera-ip-hikvision-2mp" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/san-pham/camera-ip-hikvision-2mp" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/san-pham/camera-ip-dahua-4mp-ai</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/san-pham/camera-ip-dahua-4mp-ai" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/san-pham/camera-ip-dahua-4mp-ai" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/san-pham/camera-analog-hikvision-2mp</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/san-pham/camera-analog-hikvision-2mp" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/san-pham/camera-analog-hikvision-2mp" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/san-pham/dau-bao-khoi-honeywell</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/san-pham/dau-bao-khoi-honeywell" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/san-pham/dau-bao-khoi-honeywell" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/san-pham/dau-bao-nhiet-honeywell</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/san-pham/dau-bao-nhiet-honeywell" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/san-pham/dau-bao-nhiet-honeywell" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/san-pham/tu-trung-tam-bao-chay-honeywell-8-zone</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/san-pham/tu-trung-tam-bao-chay-honeywell-8-zone" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/san-pham/tu-trung-tam-bao-chay-honeywell-8-zone" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/san-pham/binh-chua-chay-bot-abc-4kg</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/san-pham/binh-chua-chay-bot-abc-4kg" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/san-pham/binh-chua-chay-bot-abc-4kg" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/san-pham/binh-chua-chay-co2-5kg</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/san-pham/binh-chua-chay-co2-5kg" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/san-pham/binh-chua-chay-co2-5kg" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/san-pham/cua-an-ninh-bosch-3-canh</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/san-pham/cua-an-ninh-bosch-3-canh" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/san-pham/cua-an-ninh-bosch-3-canh" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/san-pham/dau-doc-the-rfid-bosch</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/san-pham/dau-doc-the-rfid-bosch" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/san-pham/dau-doc-the-rfid-bosch" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/thiet-bi-an-ninh-soi-chieu</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/thiet-bi-an-ninh-soi-chieu" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/thiet-bi-an-ninh-soi-chieu" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/thiet-bi-bao-chay-chua-chay</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/thiet-bi-bao-chay-chua-chay" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/thiet-bi-bao-chay-chua-chay" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/thiet-bi-vien-thong-truyen-dan</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/thiet-bi-vien-thong-truyen-dan" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/thiet-bi-vien-thong-truyen-dan" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/may-soi-chieu</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/may-soi-chieu" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/may-soi-chieu" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/thiet-bi-kiem-soat-an-ninh</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/thiet-bi-kiem-soat-an-ninh" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/thiet-bi-kiem-soat-an-ninh" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/camera-giam-sat</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/camera-giam-sat" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/camera-giam-sat" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/he-thong-bao-chay</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/he-thong-bao-chay" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/he-thong-bao-chay" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/binh-chua-chay</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/binh-chua-chay" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/binh-chua-chay" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/thiet-bi-phong-chay</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/thiet-bi-phong-chay" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/thiet-bi-phong-chay" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/thiet-bi-truyen-dan</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/thiet-bi-truyen-dan" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/thiet-bi-truyen-dan" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/thiet-bi-mang</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/thiet-bi-mang" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/thiet-bi-mang" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/may-soi-chieu-xray</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/may-soi-chieu-xray" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/may-soi-chieu-xray" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/may-do-kim-loai</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/may-do-kim-loai" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/may-do-kim-loai" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/cua-an-ninh</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/cua-an-ninh" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/cua-an-ninh" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/dau-doc-the</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/dau-doc-the" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/dau-doc-the" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/camera-ip</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/camera-ip" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/camera-ip" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/camera-analog</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/camera-analog" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/camera-analog" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/dau-bao-chay</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/dau-bao-chay" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/dau-bao-chay" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/trung-tam-bao-chay</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/trung-tam-bao-chay" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/trung-tam-bao-chay" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/binh-chua-chay-bot</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/binh-chua-chay-bot" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/binh-chua-chay-bot" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/danh-muc/binh-chua-chay-co2</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/danh-muc/binh-chua-chay-co2" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/danh-muc/binh-chua-chay-co2" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/tin-tuc/gioi-thieu-dong-may-soi-chieu-x-ray-the-he-moi</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/tin-tuc/gioi-thieu-dong-may-soi-chieu-x-ray-the-he-moi" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/tin-tuc/gioi-thieu-dong-may-soi-chieu-x-ray-the-he-moi" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/tin-tuc/he-thong-camera-an-ninh-ai-xu-huong-cong-nghe-2026</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/tin-tuc/he-thong-camera-an-ninh-ai-xu-huong-cong-nghe-2026" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/tin-tuc/he-thong-camera-an-ninh-ai-xu-huong-cong-nghe-2026" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/tin-tuc/giai-phap-phong-chay-chua-chay-toan-dien-cho-toa-nha-van-phong</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/tin-tuc/giai-phap-phong-chay-chua-chay-toan-dien-cho-toa-nha-van-phong" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/tin-tuc/giai-phap-phong-chay-chua-chay-toan-dien-cho-toa-nha-van-phong" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/tin-tuc/5-luu-y-khi-lua-chon-thiet-bi-kiem-soat-ra-vao-cho-doanh-nghiep</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/tin-tuc/5-luu-y-khi-lua-chon-thiet-bi-kiem-soat-ra-vao-cho-doanh-nghiep" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/tin-tuc/5-luu-y-khi-lua-chon-thiet-bi-kiem-soat-ra-vao-cho-doanh-nghiep" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/tin-tuc/bao-tri-he-thong-camera-giam-sat-nhung-dieu-can-biet</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/tin-tuc/bao-tri-he-thong-camera-giam-sat-nhung-dieu-can-biet" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/tin-tuc/bao-tri-he-thong-camera-giam-sat-nhung-dieu-can-biet" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/du-an/lap-dat-he-thong-an-ninh-cho-toa-nha-van-phong-abc</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/du-an/lap-dat-he-thong-an-ninh-cho-toa-nha-van-phong-abc" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/du-an/lap-dat-he-thong-an-ninh-cho-toa-nha-van-phong-abc" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/du-an/he-thong-pccc-cho-trung-tam-thuong-mai-xyz</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/du-an/he-thong-pccc-cho-trung-tam-thuong-mai-xyz" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/du-an/he-thong-pccc-cho-trung-tam-thuong-mai-xyz" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/du-an/giai-phap-soi-chieu-an-ninh-cho-san-bay-quoc-te-da-nang</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/du-an/giai-phap-soi-chieu-an-ninh-cho-san-bay-quoc-te-da-nang" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/du-an/giai-phap-soi-chieu-an-ninh-cho-san-bay-quoc-te-da-nang" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/du-an/he-thong-kiem-soat-ra-vao-cho-khu-cong-nghiep-thang-long</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/du-an/he-thong-kiem-soat-ra-vao-cho-khu-cong-nghiep-thang-long" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/du-an/he-thong-kiem-soat-ra-vao-cho-khu-cong-nghiep-thang-long" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+            </url>
+    <url>
+    <loc>http://localhost/vi/du-an/trang-bi-thiet-bi-pccc-cho-benh-vien-da-khoa-quoc-te</loc>
+    <xhtml:link rel="alternate" hreflang="http://localhost/vi/du-an/trang-bi-thiet-bi-pccc-cho-benh-vien-da-khoa-quoc-te" href="http://localhost/vi" />
+    <xhtml:link rel="alternate" hreflang="http://localhost/en/du-an/trang-bi-thiet-bi-pccc-cho-benh-vien-da-khoa-quoc-te" href="http://localhost/en" />
+    <lastmod>2026-06-28T02:17:50+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+            </url>
+</urlset>
