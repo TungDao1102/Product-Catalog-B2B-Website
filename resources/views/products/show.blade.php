@@ -189,14 +189,87 @@
                     </div>
 
                     <div class="product-actions">
-                        <a href="{{ route('contact') }}?product={{ $product->slug }}" class="btn-quote">
+                        <button type="button" class="btn-quote" data-bs-toggle="modal" data-bs-target="#quoteModal">
                             <i class="bi bi-envelope"></i> Yêu cầu báo giá
-                        </a>
+                        </button>
                         @if($product->brochure)
                             <a href="{{ asset('storage/' . $product->brochure) }}" class="btn-brochure" target="_blank">
                                 <i class="bi bi-file-pdf"></i> Tải brochure kỹ thuật
                             </a>
                         @endif
+                    </div>
+                </div>
+
+                <!-- Quote Request Modal -->
+                <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="quoteModalLabel">Yêu cầu báo giá: {{ $product->name }}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form action="{{ route('inquiries.store') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <div class="modal-body">
+                                    @if($errors->any())
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <strong><i class="bi bi-exclamation-triangle me-2"></i>Vui lòng kiểm tra lại thông tin:</strong>
+                                            <ul class="mb-0 mt-1">
+                                                @foreach($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    @endif
+
+                                    @if(session('quote_success'))
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            <i class="bi bi-check-circle me-2"></i>{{ session('quote_success') }}
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    @endif
+
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="quote_name" class="form-label">Họ và tên <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="quote_name" name="name" value="{{ old('name') }}" required>
+                                            @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="quote_email" class="form-label">Email <span class="text-danger">*</span></label>
+                                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="quote_email" name="email" value="{{ old('email') }}" required>
+                                            @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="quote_phone" class="form-label">Số điện thoại</label>
+                                            <input type="text" class="form-control @error('phone') is-invalid @enderror" id="quote_phone" name="phone" value="{{ old('phone') }}">
+                                            @error('phone') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="quote_company" class="form-label">Công ty</label>
+                                            <input type="text" class="form-control @error('company') is-invalid @enderror" id="quote_company" name="company" value="{{ old('company') }}">
+                                            @error('company') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="quote_quantity" class="form-label">Số lượng</label>
+                                            <input type="number" class="form-control @error('quantity') is-invalid @enderror" id="quote_quantity" name="quantity" value="{{ old('quantity') }}" min="1">
+                                            @error('quantity') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="quote_message" class="form-label">Nội dung <span class="text-danger">*</span></label>
+                                            <textarea class="form-control @error('message') is-invalid @enderror" id="quote_message" name="message" rows="4" required>{{ old('message') }}</textarea>
+                                            @error('message') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="submit" class="btn btn-primary">Gửi yêu cầu</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -221,7 +294,7 @@
                             </div>
                             <div class="card-footer">
                                 <a href="{{ route('products.show', $related->slug) }}" class="btn-detail"><i class="bi bi-eye me-1"></i> Chi tiết</a>
-                                <a href="{{ route('contact') }}?product={{ $related->slug }}" class="btn-quote-sm"><i class="bi bi-envelope me-1"></i> Báo giá</a>
+                                <a href="{{ route('products.show', $related->slug) }}" class="btn-quote-sm"><i class="bi bi-envelope me-1"></i> Báo giá</a>
                             </div>
                         </div>
                     </div>
@@ -261,4 +334,13 @@
         selectImage(prev);
     }
 </script>
+
+@if(session('quote_success') || $errors->hasAny(['product_id', 'name', 'email', 'phone', 'company', 'quantity', 'message']))
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var modal = new bootstrap.Modal(document.getElementById('quoteModal'));
+        modal.show();
+    });
+</script>
+@endif
 @endpush
