@@ -65,11 +65,11 @@
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container text-center py-5">
-        <h1 class="display-2 text-dark mb-4 animated slideInDown">Dự án</h1>
+        <h1 class="display-2 text-dark mb-4 animated slideInDown">{{ __('navigation.projects') }}</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('projects.index') }}">Dự án</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('navigation.home') }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('projects.index') }}">{{ __('navigation.projects') }}</a></li>
                 <li class="breadcrumb-item text-dark" aria-current="page">{{ $project->title }}</li>
             </ol>
         </nav>
@@ -87,10 +87,10 @@
                     <div class="project-gallery-main">
                         @php $mainImage = $project->images[0] ?? null; @endphp
                         <img src="{{ $mainImage ? asset('storage/' . $mainImage) : asset('img/product-1.jpg') }}" alt="{{ $project->title }}" id="mainImage">
-                        <button class="gallery-nav gallery-nav-prev" onclick="prevImage()" aria-label="Ảnh trước">
+                        <button class="gallery-nav gallery-nav-prev" onclick="prevImage()" aria-label="{{ __('common.gallery_prev') }}">
                             <i class="bi bi-chevron-left"></i>
                         </button>
-                        <button class="gallery-nav gallery-nav-next" onclick="nextImage()" aria-label="Ảnh tiếp">
+                        <button class="gallery-nav gallery-nav-next" onclick="nextImage()" aria-label="{{ __('common.gallery_next') }}">
                             <i class="bi bi-chevron-right"></i>
                         </button>
                     </div>
@@ -98,7 +98,7 @@
                     <div class="project-gallery-thumbs" id="galleryThumbs">
                         @foreach($project->images as $index => $image)
                             <div class="project-thumb {{ $index === 0 ? 'active' : '' }}" onclick="selectImage({{ $index }})">
-                                <img src="{{ asset('storage/' . $image) }}" alt="Ảnh {{ $index + 1 }}">
+                                <img src="{{ asset('storage/' . $image) }}" alt="{{ __('common.gallery_image') }} {{ $index + 1 }}">
                             </div>
                         @endforeach
                     </div>
@@ -127,7 +127,7 @@
         <!-- Back Navigation -->
         <div class="mt-5 wow fadeInUp" data-wow-delay="0.3s">
             <a href="{{ route('projects.index') }}" class="btn btn-primary rounded-pill py-2 px-4">
-                <i class="bi bi-arrow-left me-1"></i> Quay lại danh sách dự án
+                <i class="bi bi-arrow-left me-1"></i> {{ __('common.back_to_projects') }}
             </a>
         </div>
     </div>

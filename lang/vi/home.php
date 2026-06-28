@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'welcome' => 'Chào mừng đến với',
+    'hero_title_1' => 'Giải pháp sản phẩm chất lượng cho doanh nghiệp',
+    'hero_title_2' => 'Đối tác tin cậy trong mọi lĩnh vực',
+    'view_products' => 'Xem sản phẩm',
+    'explore_now' => 'Khám phá ngay',
+    'featured_products' => 'Sản phẩm nổi bật',
+    'featured_products_subtitle' => 'Sản phẩm tiêu biểu',
+    'about_us' => 'Về chúng tôi',
+    'about_title' => 'Đối tác cung cấp thiết bị hàng đầu',
+    'quality_commitment' => 'Cam kết chất lượng và uy tín',
+    'quality_commitment_text' => 'Chúng tôi chuyên cung cấp các sản phẩm và giải pháp chất lượng cao cho doanh nghiệp trong nhiều lĩnh vực.',
+    'experience_title' => 'Hơn 15 năm kinh nghiệm',
+    'experience_text' => 'Với đội ngũ chuyên nghiệp và giàu kinh nghiệm, chúng tôi đã đồng hành cùng hàng trăm dự án lớn nhỏ.',
+    'product_catalog' => 'Danh mục sản phẩm',
+    'featured_article' => 'Bài viết nổi bật',
+    'article_title' => 'Giải pháp tối ưu cho doanh nghiệp',
+    'article_text_1' => 'Chúng tôi cung cấp các sản phẩm và giải pháp công nghệ tiên tiến, đáp ứng nhu cầu đa dạng của khách hàng trong nhiều lĩnh vực khác nhau.',
+    'article_text_2' => 'Đội ngũ kỹ thuật giàu kinh nghiệm, sẵn sàng tư vấn và hỗ trợ khách hàng lựa chọn sản phẩm phù hợp nhất.',
+    'view_all_products' => 'Xem tất cả sản phẩm',
+    'product_placeholder' => 'Sản phẩm',
+    'product_updating' => 'Thông tin sản phẩm đang cập nhật',
+    'no_products_yet' => 'Chưa có sản phẩm nào.',
+];

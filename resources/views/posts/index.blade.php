@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
-@section('title', 'Tin tức')
-@section('meta_description', 'Tin tức và bài viết mới nhất về sản phẩm, giải pháp cho doanh nghiệp')
+@section('title', __('navigation.posts'))
+@section('meta_description', __('seo.posts_title'))
 
 @section('content')
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container text-center py-5">
-        <h1 class="display-2 text-dark mb-4 animated slideInDown">Tin tức</h1>
+        <h1 class="display-2 text-dark mb-4 animated slideInDown">{{ __('navigation.posts') }}</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="breadcrumb-item text-dark" aria-current="page">Tin tức</li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('navigation.home') }}</a></li>
+                <li class="breadcrumb-item text-dark" aria-current="page">{{ __('navigation.posts') }}</li>
             </ol>
         </nav>
     </div>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="card-footer">
                             <a href="{{ route('posts.show', $post->slug) }}" class="btn-detail">
-                                <i class="bi bi-eye me-1"></i> Đọc tiếp
+                                <i class="bi bi-eye me-1"></i> {{ __('common.read_more') }}
                             </a>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
             @empty
                 <div class="col-12 text-center py-5">
                     <i class="bi bi-newspaper" style="font-size: 3rem; color: #ddd;"></i>
-                    <p class="text-muted mt-3">Chưa có bài viết nào.</p>
+                    <p class="text-muted mt-3">{{ __('common.no_posts') }}</p>
                 </div>
             @endforelse
         </div>

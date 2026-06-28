@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'welcome' => 'Welcome to',
+    'hero_title_1' => 'Quality product solutions for businesses',
+    'hero_title_2' => 'Trusted partner in every field',
+    'view_products' => 'View Products',
+    'explore_now' => 'Explore Now',
+    'featured_products' => 'Featured Products',
+    'featured_products_subtitle' => 'Top Products',
+    'about_us' => 'About Us',
+    'about_title' => 'Leading equipment supply partner',
+    'quality_commitment' => 'Quality and reliability commitment',
+    'quality_commitment_text' => 'We specialize in providing high-quality products and solutions for businesses across multiple industries.',
+    'experience_title' => 'Over 15 years of experience',
+    'experience_text' => 'With a professional and experienced team, we have partnered with hundreds of projects of all sizes.',
+    'product_catalog' => 'Product Catalog',
+    'featured_article' => 'Featured Article',
+    'article_title' => 'Optimal solutions for businesses',
+    'article_text_1' => 'We provide advanced technology products and solutions, meeting the diverse needs of customers across various industries.',
+    'article_text_2' => 'Our experienced technical team is ready to consult and support customers in selecting the most suitable products.',
+    'view_all_products' => 'View All Products',
+    'product_placeholder' => 'Product',
+    'product_updating' => 'Product information is being updated',
+    'no_products_yet' => 'No products yet.',
+];

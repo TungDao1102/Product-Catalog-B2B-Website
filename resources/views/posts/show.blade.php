@@ -7,11 +7,11 @@
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container text-center py-5">
-        <h1 class="display-2 text-dark mb-4 animated slideInDown">Tin tức</h1>
+        <h1 class="display-2 text-dark mb-4 animated slideInDown">{{ __('navigation.posts') }}</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('posts.index') }}">Tin tức</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('navigation.home') }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('posts.index') }}">{{ __('navigation.posts') }}</a></li>
                 <li class="breadcrumb-item text-dark" aria-current="page">{{ $post->title }}</li>
             </ol>
         </nav>
@@ -47,7 +47,7 @@
 
                     <div class="mt-5 pt-3 border-top">
                         <a href="{{ route('posts.index') }}" class="btn btn-primary rounded-pill py-2 px-4">
-                            <i class="bi bi-arrow-left me-1"></i> Quay lại danh sách tin tức
+                            <i class="bi bi-arrow-left me-1"></i> {{ __('common.back_to_posts') }}
                         </a>
                     </div>
                 </div>

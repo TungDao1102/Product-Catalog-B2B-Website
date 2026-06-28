@@ -10,8 +10,8 @@
         <h1 class="display-2 text-dark mb-4 animated slideInDown">{{ $category->name }}</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('products.index') }}">Sản phẩm</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('navigation.home') }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('products.index') }}">{{ __('navigation.products') }}</a></li>
                 <li class="breadcrumb-item text-dark" aria-current="page">{{ $category->name }}</li>
             </ol>
         </nav>
@@ -31,7 +31,7 @@
                 </p>
             </div>
             <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-                <span class="badge bg-primary rounded-pill py-2 px-3">{{ $products->total() }} sản phẩm</span>
+                <span class="badge bg-primary rounded-pill py-2 px-3">{{ $products->total() }} {{ __('common.products_count') }}</span>
             </div>
         </div>
     </div>
@@ -48,10 +48,10 @@
                 <div class="filter-sidebar wow fadeInUp" data-wow-delay="0.1s">
                     <!-- Search -->
                     <div class="filter-section">
-                        <h5>Tìm kiếm</h5>
+                        <h5>{{ __('navigation.search') }}</h5>
                         <form action="{{ route('categories.show', $category->slug) }}" method="GET">
                             <div class="search-box">
-                                <input type="text" name="search" class="form-control" placeholder="Tìm sản phẩm..." value="{{ request('search') }}">
+                                <input type="text" name="search" class="form-control" placeholder="{{ __('common.search_placeholder') }}" value="{{ request('search') }}">
                                 <button type="submit"><i class="bi bi-search"></i></button>
                             </div>
                         </form>
@@ -66,7 +66,7 @@
                         @endif
                     </div>
 
-                    <a href="{{ route('categories.show', $category->slug) }}" class="btn btn-primary w-100 rounded-pill py-2">Áp dụng bộ lọc</a>
+                    <a href="{{ route('categories.show', $category->slug) }}" class="btn btn-primary w-100 rounded-pill py-2">{{ __('common.apply_filters') }}</a>
                 </div>
             </div>
 
@@ -75,18 +75,18 @@
                 <!-- Sort Bar -->
                 <div class="d-flex justify-content-between align-items-center mb-4 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="mb-0 text-muted">
-                        Hiển thị {{ $products->firstItem() ?? 0 }}-{{ $products->lastItem() ?? 0 }}
-                        trên {{ $products->total() }} sản phẩm
+                        {{ __('common.showing') }} {{ $products->firstItem() ?? 0 }}-{{ $products->lastItem() ?? 0 }}
+                        {{ __('common.of') }} {{ $products->total() }} {{ __('common.products_lower') }}
                     </p>
                     <form action="{{ route('categories.show', $category->slug) }}" method="GET">
                         @if(request('search'))
                             <input type="hidden" name="search" value="{{ request('search') }}">
                         @endif
                         <select name="sort" class="form-select form-select-sm w-auto" onchange="this.form.submit()">
-                            <option value="default" {{ request('sort') == 'default' ? 'selected' : '' }}>Sắp xếp: Mặc định</option>
-                            <option value="name_asc" {{ request('sort') == 'name_asc' ? 'selected' : '' }}>Tên A-Z</option>
-                            <option value="name_desc" {{ request('sort') == 'name_desc' ? 'selected' : '' }}>Tên Z-A</option>
-                            <option value="newest" {{ request('sort') == 'newest' ? 'selected' : '' }}>Mới nhất</option>
+                            <option value="default" {{ request('sort') == 'default' ? 'selected' : '' }}>{{ __('common.sort') }}: {{ __('common.sort_default') }}</option>
+                            <option value="name_asc" {{ request('sort') == 'name_asc' ? 'selected' : '' }}>{{ __('common.sort_name_asc') }}</option>
+                            <option value="name_desc" {{ request('sort') == 'name_desc' ? 'selected' : '' }}>{{ __('common.sort_name_desc') }}</option>
+                            <option value="newest" {{ request('sort') == 'newest' ? 'selected' : '' }}>{{ __('common.sort_newest') }}</option>
                         </select>
                     </form>
                 </div>
@@ -96,7 +96,7 @@
                         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="product-card-b2b">
                                 @if($product->is_featured)
-                                    <span class="product-badge">Nổi bật</span>
+                                    <span class="product-badge">{{ __('common.featured') }}</span>
                                 @endif
                                 <img class="card-img" src="{{ isset($product->images[0]) ? asset('storage/' . $product->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
                                 <div class="card-body">
@@ -105,15 +105,15 @@
                                     <p class="card-text">{{ Str::limit($product->short_description, 100) }}</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="{{ route('products.show', $product->slug) }}" class="btn-detail"><i class="bi bi-eye me-1"></i> Chi tiết</a>
-                                    <a href="{{ route('contact') }}?product={{ $product->slug }}" class="btn-quote-sm"><i class="bi bi-envelope me-1"></i> Báo giá</a>
+                                    <a href="{{ route('products.show', $product->slug) }}" class="btn-detail"><i class="bi bi-eye me-1"></i> {{ __('common.view_detail') }}</a>
+                                    <a href="{{ route('contact') }}?product={{ $product->slug }}" class="btn-quote-sm"><i class="bi bi-envelope me-1"></i> {{ __('common.get_quote') }}</a>
                                 </div>
                             </div>
                         </div>
                     @empty
                         <div class="col-12 text-center py-5">
                             <i class="bi bi-box-seam" style="font-size: 3rem; color: #ddd;"></i>
-                            <p class="text-muted mt-3">Không có sản phẩm nào trong danh mục này.</p>
+                            <p class="text-muted mt-3">{{ __('common.no_products_in_category') }}</p>
                         </div>
                     @endforelse
                 </div>
