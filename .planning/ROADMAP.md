@@ -134,26 +134,54 @@
 ### Phase 4: Đa ngôn ngữ & SEO (Multi-language & SEO)
 **Mục tiêu:** Kiến trúc i18n + tối ưu SEO cơ bản.
 
+**Dependencies:** Phase 2, Phase 3
+
+**Plans:** 7 plans
+
+| Plan | Wave | Type | Objective |
+|------|------|------|-----------|
+| 04-01 | 1 | execute | Package Install + JSON Migration — composer require 3 packages, HasTranslations trait on 5 models, JSON column migration + data migration, fallback locale |
+| 04-02 | 1 | execute | Locale Routing + Middleware — SetLocale middleware, prefix all frontend routes with `/{locale}`, root redirect, robots.txt |
+| 04-03 | 2 | execute | Filament Translatable UI — Translatable concern on 5 Resources, LocaleSwitcher on Create/Edit pages |
+| 04-04 | 2 | execute | lang/ Files + Language Switcher — 12 lang files (6×2 locales), language-switcher component, OG tag structure in layout |
+| 04-07 | 2 | execute | Seeders Update + Search Query Fix — bilingual seeders with English, JSON path search queries `name->vi`/`name->en` |
+| 04-05 | 3 | execute | i18n in Views — replace all hardcoded Vietnamese in Blade views with `__()` calls |
+| 04-06 | 3 | execute | SEO: Sitemap + OG Tags — Sitemapable interface on 4 models, sitemap generation command, $seo data in controllers, OG tag wiring |
+
 **Deliverables:**
 - **i18n:**
   - Cài spatie/laravel-translatable — translatable models
   - Language switcher (UI)
-  - Translatable fields: category name, product name/description, brand name, post content
+  - Translatable fields: category name, product name/description, brand name, post content, meta fields
   - Language files (lang/) cho UI strings (tiếng Việt default)
   - Admin: Filament hỗ trợ nhập nội dung đa ngôn ngữ
 - **SEO:**
   - Meta title, description, keywords cho từng trang
   - URL slug thân thiện cho category, product, post
-  - Sitemap.xml tự động
+  - Sitemap.xml tự động (daily schedule)
   - robots.txt
   - Open Graph tags cơ bản
 
-**Dependencies:** Phase 2, Phase 3
+**Wave 1** (parallel):
+- 04-01: Install packages + JSON migration + HasTranslations trait
+- 04-02: SetLocale middleware + route prefix + root redirect
+
+**Wave 2** (parallel, after 04-01):
+- 04-03: Filament tabbed translatable UI
+- 04-04: Language files + switcher component
+- 04-07: Bilingual seeders + search query fixes
+
+**Wave 3** (parallel, after 04-02 + 04-04):
+- 04-05: i18n view replacements
+- 04-06: Sitemap + OG tags
 
 **Verification:**
 - Chuyển đổi ngôn ngữ trên frontend hoạt động
 - Nội dung song ngữ trong admin nhập được
 - Sitemap.xml trả về danh sách URL hợp lệ
+- Search hoạt động với JSON column queries
+- Tất cả view text được i18n hóa
+- OG meta tags có trong HTML head
 
 ---
 
