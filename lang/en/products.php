@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'page_title' => 'Product Catalog',
+    'page_description' => 'Diverse, high-quality product catalog for businesses',
+    'detail_title' => 'Product Detail',
+    'product_code' => 'Product Code',
+    'brand' => 'Brand',
+    'category' => 'Category',
+    'unit' => 'Unit',
+    'min_order_qty' => 'Min Order Quantity',
+    'status' => 'Status',
+    'description' => 'Product Description',
+    'technical_specs' => 'Technical Specifications',
+    'spec_name' => 'Specification',
+    'spec_value' => 'Value',
+    'brochure' => 'Product Brochure',
+    'download_pdf' => 'Download PDF',
+    'request_quote' => 'Request Quote',
+    'related_products' => 'Related Products',
+    'download_brochure' => 'Download Product Brochure',
+    'brochure_description' => 'Detailed technical specifications, user guide and warranty information.',
+    'no_product_found' => 'No products found.',
+    'sku' => 'SKU',
+];

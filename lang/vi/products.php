@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'page_title' => 'Danh mục sản phẩm',
+    'page_description' => 'Danh mục sản phẩm đa dạng, chất lượng cao cho doanh nghiệp',
+    'detail_title' => 'Chi tiết sản phẩm',
+    'product_code' => 'Mã sản phẩm',
+    'brand' => 'Hãng sản xuất',
+    'category' => 'Danh mục',
+    'unit' => 'Đơn vị tính',
+    'min_order_qty' => 'Số lượng tối thiểu',
+    'status' => 'Tình trạng',
+    'description' => 'Mô tả sản phẩm',
+    'technical_specs' => 'Thông số kỹ thuật',
+    'spec_name' => 'Thông số',
+    'spec_value' => 'Giá trị',
+    'brochure' => 'Brochure sản phẩm',
+    'download_pdf' => 'Tải PDF',
+    'request_quote' => 'Yêu cầu báo giá',
+    'related_products' => 'Sản phẩm liên quan',
+    'download_brochure' => 'Tải brochure sản phẩm',
+    'brochure_description' => 'Tài liệu thông số kỹ thuật chi tiết, hướng dẫn sử dụng và thông tin bảo hành.',
+    'no_product_found' => 'Không tìm thấy sản phẩm nào.',
+    'sku' => 'Mã sản phẩm',
+];
