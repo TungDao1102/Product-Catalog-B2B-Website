@@ -29,7 +29,7 @@ class ContactFormTest extends TestCase
         $response = $this->get(route('contact'));
 
         $response->assertStatus(200);
-        $response->assertDontSee('name="subject"');
+        $response->assertDontSee('name="subject"', false);
     }
 
     public function test_contact_form_has_phone_and_company(): void
@@ -37,8 +37,8 @@ class ContactFormTest extends TestCase
         $response = $this->get(route('contact'));
 
         $response->assertStatus(200);
-        $response->assertSee('name="phone"');
-        $response->assertSee('name="company"');
+        $response->assertSee('name="phone"', false);
+        $response->assertSee('name="company"', false);
     }
 
     public function test_contact_store_validates_required_fields(): void
