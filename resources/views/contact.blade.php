@@ -50,37 +50,56 @@
         </div>
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <h3 class="mb-4">Gửi yêu cầu báo giá</h3>
+                <h3 class="mb-4">Gửi liên hệ</h3>
                 <p class="mb-4">Vui lòng điền thông tin bên dưới, chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.</p>
+
+                @if(session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <i class="bi bi-check-circle me-2"></i>{{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
                 <form action="{{ route('contact') }}" method="POST">
                     @csrf
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Họ và tên" required>
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" placeholder="Họ và tên" value="{{ old('name') }}" required>
                                 <label for="name">Họ và tên</label>
+                                @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
                                 <label for="email">Email</label>
+                                @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" placeholder="Số điện thoại" value="{{ old('phone') }}">
+                                <label for="phone">Số điện thoại</label>
+                                @error('phone') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control @error('company') is-invalid @enderror" id="company" name="company" placeholder="Công ty" value="{{ old('company') }}">
+                                <label for="company">Công ty</label>
+                                @error('company') <div class="invalid-feedback">{{ $message }}</div> @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Chủ đề" value="{{ request('product') ? 'Yêu cầu báo giá: '.request('product') : '' }}">
-                                <label for="subject">Chủ đề</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Nội dung" id="message" name="message" style="height: 120px" required></textarea>
+                                <textarea class="form-control @error('message') is-invalid @enderror" placeholder="Nội dung" id="message" name="message" style="height: 120px" required>{{ old('message') }}</textarea>
                                 <label for="message">Nội dung</label>
+                                @error('message') <div class="invalid-feedback">{{ $message }}</div> @enderror
                             </div>
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Gửi yêu cầu</button>
+                            <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Gửi liên hệ</button>
                         </div>
                     </div>
                 </form>
