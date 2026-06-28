@@ -38,11 +38,17 @@ class ProductSeeder extends Seeder
         Product::create([
             'category_id' => $xray->id,
             'brand_id' => $bosch,
-            'name' => 'Máy soi chiếu X-Ray trường bay',
+            'name' => ['vi' => 'Máy soi chiếu X-Ray trường bay', 'en' => 'Airport X-Ray Scanner'],
             'slug' => Str::slug('Máy soi chiếu X-Ray trường bay'),
             'sku' => 'XRAY-BOSCH-001',
-            'short_description' => 'Máy soi chiếu tia X trường bay công suất lớn, phát hiện vật cấm chính xác cao.',
-            'description' => '<p>Máy soi chiếu tia X trường bay công suất lớn, trang bị công nghệ phát hiện vật cấm thông minh. Hỗ trợ phân loại tự động các vật liệu hữu cơ và vô cơ. Phù hợp cho sân bay, nhà ga và các trung tâm thương mại lớn.</p>',
+            'short_description' => [
+                'vi' => 'Máy soi chiếu tia X trường bay công suất lớn, phát hiện vật cấm chính xác cao.',
+                'en' => 'Large-capacity airport X-ray scanner with high-accuracy prohibited item detection.',
+            ],
+            'description' => [
+                'vi' => '<p>Máy soi chiếu tia X trường bay công suất lớn, trang bị công nghệ phát hiện vật cấm thông minh. Hỗ trợ phân loại tự động các vật liệu hữu cơ và vô cơ. Phù hợp cho sân bay, nhà ga và các trung tâm thương mại lớn.</p>',
+                'en' => '<p>Large-capacity airport X-ray scanner equipped with smart prohibited item detection technology. Supports automatic classification of organic and inorganic materials. Suitable for airports, train stations and large shopping centers.</p>',
+            ],
             'technical_specs' => [
                 ['attribute_name' => 'Kích thước đường hầm', 'attribute_value' => '1000x800mm'],
                 ['attribute_name' => 'Điện áp hoạt động', 'attribute_value' => '220V/50Hz'],
@@ -65,11 +71,17 @@ class ProductSeeder extends Seeder
         Product::create([
             'category_id' => $xray->id,
             'brand_id' => $bosch,
-            'name' => 'Máy soi chiếu X-Ray di động',
+            'name' => ['vi' => 'Máy soi chiếu X-Ray di động', 'en' => 'Portable X-Ray Scanner'],
             'slug' => Str::slug('Máy soi chiếu X-Ray di động'),
             'sku' => 'XRAY-BOSCH-002',
-            'short_description' => 'Máy soi chiếu tia X di động, phù hợp cho kiểm tra an ninh linh hoạt.',
-            'description' => '<p>Máy soi chiếu tia X di động nhỏ gọn, dễ dàng di chuyển và lắp đặt. Phù hợp cho các sự kiện, hội nghị và kiểm tra an ninh tạm thời.</p>',
+            'short_description' => [
+                'vi' => 'Máy soi chiếu tia X di động, phù hợp cho kiểm tra an ninh linh hoạt.',
+                'en' => 'Portable X-ray scanner, suitable for flexible security inspections.',
+            ],
+            'description' => [
+                'vi' => '<p>Máy soi chiếu tia X di động nhỏ gọn, dễ dàng di chuyển và lắp đặt. Phù hợp cho các sự kiện, hội nghị và kiểm tra an ninh tạm thời.</p>',
+                'en' => '<p>Compact portable X-ray scanner, easy to move and install. Suitable for events, conferences and temporary security inspections.</p>',
+            ],
             'technical_specs' => [
                 ['attribute_name' => 'Kích thước đường hầm', 'attribute_value' => '600x400mm'],
                 ['attribute_name' => 'Điện áp hoạt động', 'attribute_value' => '220V/50Hz'],
@@ -92,11 +104,17 @@ class ProductSeeder extends Seeder
         Product::create([
             'category_id' => $metalDetector->id,
             'brand_id' => $bosch,
-            'name' => 'Cửa dò kim loại 6 vùng',
+            'name' => ['vi' => 'Cửa dò kim loại 6 vùng', 'en' => '6-Zone Walk-Through Metal Detector'],
             'slug' => Str::slug('Cửa dò kim loại 6 vùng'),
             'sku' => 'MD-BOSCH-001',
-            'short_description' => 'Cửa dò kim loại 6 vùng phát hiện, độ nhạy cao, phù hợp cửa ra vào.',
-            'description' => '<p>Cửa dò kim loại 6 vùng phát hiện với độ nhạy cao, cho phép xác định chính xác vị trí vật thể kim loại trên cơ thể. Phù hợp lắp đặt tại các cửa ra vào tòa nhà, trung tâm thương mại và nhà ga.</p>',
+            'short_description' => [
+                'vi' => 'Cửa dò kim loại 6 vùng phát hiện, độ nhạy cao, phù hợp cửa ra vào.',
+                'en' => '6-zone walk-through metal detector, high sensitivity, suitable for entrances.',
+            ],
+            'description' => [
+                'vi' => '<p>Cửa dò kim loại 6 vùng phát hiện với độ nhạy cao, cho phép xác định chính xác vị trí vật thể kim loại trên cơ thể. Phù hợp lắp đặt tại các cửa ra vào tòa nhà, trung tâm thương mại và nhà ga.</p>',
+                'en' => '<p>6-zone detection walk-through metal detector with high sensitivity, allowing precise location of metal objects on the body. Suitable for installation at building entrances, shopping centers and train stations.</p>',
+            ],
             'technical_specs' => [
                 ['attribute_name' => 'Số vùng phát hiện', 'attribute_value' => '6 vùng'],
                 ['attribute_name' => 'Độ nhạy', 'attribute_value' => 'Có thể điều chỉnh 100 cấp'],
@@ -119,11 +137,17 @@ class ProductSeeder extends Seeder
         Product::create([
             'category_id' => $ipCamera->id,
             'brand_id' => $hikvision,
-            'name' => 'Camera IP Hikvision 2MP',
+            'name' => ['vi' => 'Camera IP Hikvision 2MP', 'en' => 'Hikvision 2MP IP Camera'],
             'slug' => Str::slug('Camera IP Hikvision 2MP'),
             'sku' => 'CAM-HIK-001',
-            'short_description' => 'Camera IP 2MP hồng ngoại thông minh, độ phân giải Full HD.',
-            'description' => '<p>Camera IP Hikvision 2MP với công nghệ hồng ngoại thông minh, cho hình ảnh sắc nét ngày và đêm. Hỗ trợ giao thức PoE, dễ dàng lắp đặt và tích hợp hệ thống.</p>',
+            'short_description' => [
+                'vi' => 'Camera IP 2MP hồng ngoại thông minh, độ phân giải Full HD.',
+                'en' => '2MP smart IR IP camera, Full HD resolution.',
+            ],
+            'description' => [
+                'vi' => '<p>Camera IP Hikvision 2MP với công nghệ hồng ngoại thông minh, cho hình ảnh sắc nét ngày và đêm. Hỗ trợ giao thức PoE, dễ dàng lắp đặt và tích hợp hệ thống.</p>',
+                'en' => '<p>Hikvision 2MP IP camera with smart IR technology, delivering crisp images day and night. Supports PoE protocol, easy to install and integrate into systems.</p>',
+            ],
             'technical_specs' => [
                 ['attribute_name' => 'Độ phân giải', 'attribute_value' => '2MP (1920x1080)'],
                 ['attribute_name' => 'Ống kính', 'attribute_value' => '2.8mm / 4mm / 6mm'],
@@ -146,11 +170,17 @@ class ProductSeeder extends Seeder
         Product::create([
             'category_id' => $ipCamera->id,
             'brand_id' => $dahua,
-            'name' => 'Camera IP Dahua 4MP AI',
+            'name' => ['vi' => 'Camera IP Dahua 4MP AI', 'en' => 'Dahua 4MP AI IP Camera'],
             'slug' => Str::slug('Camera IP Dahua 4MP AI'),
             'sku' => 'CAM-DAH-001',
-            'short_description' => 'Camera IP 4MP tích hợp AI phát hiện người và phương tiện.',
-            'description' => '<p>Camera IP Dahua 4MP tích hợp trí tuệ nhân tạo có khả năng phát hiện người, phương tiện và phân tích hành vi thông minh. Phù hợp cho các hệ thống an ninh chuyên nghiệp.</p>',
+            'short_description' => [
+                'vi' => 'Camera IP 4MP tích hợp AI phát hiện người và phương tiện.',
+                'en' => '4MP IP camera with AI-powered people and vehicle detection.',
+            ],
+            'description' => [
+                'vi' => '<p>Camera IP Dahua 4MP tích hợp trí tuệ nhân tạo có khả năng phát hiện người, phương tiện và phân tích hành vi thông minh. Phù hợp cho các hệ thống an ninh chuyên nghiệp.</p>',
+                'en' => '<p>Dahua 4MP IP camera with built-in artificial intelligence capable of people detection, vehicle detection and intelligent behavior analysis. Suitable for professional security systems.</p>',
+            ],
             'technical_specs' => [
                 ['attribute_name' => 'Độ phân giải', 'attribute_value' => '4MP (2688x1520)'],
                 ['attribute_name' => 'Ống kính', 'attribute_value' => '2.7mm~13.5mm motorized'],
@@ -174,11 +204,17 @@ class ProductSeeder extends Seeder
         Product::create([
             'category_id' => $analogCamera->id,
             'brand_id' => $hikvision,
-            'name' => 'Camera Analog Hikvision 2MP',
+            'name' => ['vi' => 'Camera Analog Hikvision 2MP', 'en' => 'Hikvision 2MP Analog Camera'],
             'slug' => Str::slug('Camera Analog Hikvision 2MP'),
             'sku' => 'CAM-HIK-002',
-            'short_description' => 'Camera Analog HD 2MP giá thành hợp lý, dễ dàng thay thế hệ thống cũ.',
-            'description' => '<p>Camera Analog Hikvision 2MP giải pháp nâng cấp từ hệ thống analog truyền thống lên HD với chi phí thấp. Tương thích đầu ghi DVR và TVI.</p>',
+            'short_description' => [
+                'vi' => 'Camera Analog HD 2MP giá thành hợp lý, dễ dàng thay thế hệ thống cũ.',
+                'en' => '2MP HD analog camera, cost-effective, easy to upgrade from old systems.',
+            ],
+            'description' => [
+                'vi' => '<p>Camera Analog Hikvision 2MP giải pháp nâng cấp từ hệ thống analog truyền thống lên HD với chi phí thấp. Tương thích đầu ghi DVR và TVI.</p>',
+                'en' => '<p>Hikvision 2MP analog camera — an upgrade solution from traditional analog to HD at low cost. Compatible with DVR and TVI recorders.</p>',
+            ],
             'technical_specs' => [
                 ['attribute_name' => 'Độ phân giải', 'attribute_value' => '2MP (1920x1080)'],
                 ['attribute_name' => 'Ống kính', 'attribute_value' => '3.6mm'],
@@ -201,11 +237,17 @@ class ProductSeeder extends Seeder
         Product::create([
             'category_id' => $fireDetector->id,
             'brand_id' => $honeywell,
-            'name' => 'Đầu báo khói Honeywell',
+            'name' => ['vi' => 'Đầu báo khói Honeywell', 'en' => 'Honeywell Smoke Detector'],
             'slug' => Str::slug('Đầu báo khói Honeywell'),
             'sku' => 'FD-HON-001',
-            'short_description' => 'Đầu báo khói quang điện Honeywell, phát hiện cháy sớm, độ tin cậy cao.',
-            'description' => '<p>Đầu báo khói Honeywell sử dụng công nghệ quang điện tiên tiến, phát hiện sớm các đám cháy phát sinh khói. Độ nhạy cao, ít báo động giả, phù hợp cho tòa nhà và văn phòng.</p>',
+            'short_description' => [
+                'vi' => 'Đầu báo khói quang điện Honeywell, phát hiện cháy sớm, độ tin cậy cao.',
+                'en' => 'Honeywell photoelectric smoke detector, early fire detection, high reliability.',
+            ],
+            'description' => [
+                'vi' => '<p>Đầu báo khói Honeywell sử dụng công nghệ quang điện tiên tiến, phát hiện sớm các đám cháy phát sinh khói. Độ nhạy cao, ít báo động giả, phù hợp cho tòa nhà và văn phòng.</p>',
+                'en' => '<p>Honeywell smoke detector using advanced photoelectric technology, early detection of smoldering fires. High sensitivity, low false alarm rate, suitable for buildings and offices.</p>',
+            ],
             'technical_specs' => [
                 ['attribute_name' => 'Loại đầu báo', 'attribute_value' => 'Quang điện (Photoelectric)'],
                 ['attribute_name' => 'Điện áp hoạt động', 'attribute_value' => '24VDC'],
@@ -228,11 +270,17 @@ class ProductSeeder extends Seeder
         Product::create([
             'category_id' => $fireDetector->id,
             'brand_id' => $honeywell,
-            'name' => 'Đầu báo nhiệt Honeywell',
+            'name' => ['vi' => 'Đầu báo nhiệt Honeywell', 'en' => 'Honeywell Heat Detector'],
             'slug' => Str::slug('Đầu báo nhiệt Honeywell'),
             'sku' => 'FD-HON-002',
-            'short_description' => 'Đầu báo nhiệt cố định và gia tốc Honeywell, phù hợp khu vực bếp, nhà xe.',
-            'description' => '<p>Đầu báo nhiệt Honeywell phát hiện sự gia tăng nhiệt độ đột ngột hoặc ngưỡng nhiệt độ cố định. Lý tưởng cho các khu vực có khói bụi như bếp, nhà xe, phòng máy.</p>',
+            'short_description' => [
+                'vi' => 'Đầu báo nhiệt cố định và gia tốc Honeywell, phù hợp khu vực bếp, nhà xe.',
+                'en' => 'Honeywell fixed-rate heat detector, suitable for kitchens and garages.',
+            ],
+            'description' => [
+                'vi' => '<p>Đầu báo nhiệt Honeywell phát hiện sự gia tăng nhiệt độ đột ngột hoặc ngưỡng nhiệt độ cố định. Lý tưởng cho các khu vực có khói bụi như bếp, nhà xe, phòng máy.</p>',
+                'en' => '<p>Honeywell heat detector detects sudden temperature rise or fixed temperature threshold. Ideal for dusty areas such as kitchens, garages and machine rooms.</p>',
+            ],
             'technical_specs' => [
                 ['attribute_name' => 'Loại đầu báo', 'attribute_value' => 'Cố định + Gia tốc'],
                 ['attribute_name' => 'Ngưỡng nhiệt cố định', 'attribute_value' => '57°C'],
@@ -255,11 +303,17 @@ class ProductSeeder extends Seeder
         Product::create([
             'category_id' => $firePanel->id,
             'brand_id' => $honeywell,
-            'name' => 'Tủ trung tâm báo cháy Honeywell 8 zone',
+            'name' => ['vi' => 'Tủ trung tâm báo cháy Honeywell 8 zone', 'en' => 'Honeywell 8-Zone Fire Alarm Panel'],
             'slug' => Str::slug('Tủ trung tâm báo cháy Honeywell 8 zone'),
             'sku' => 'FCP-HON-001',
-            'short_description' => 'Trung tâm báo cháy 8 kênh, quản lý tập trung toàn bộ hệ thống.',
-            'description' => '<p>Trung tâm báo cháy Honeywell 8 zone cho phép quản lý đến 8 khu vực độc lập. Hỗ trợ đầu báo khói, nhiệt, nút nhấn và còi báo động. Giao diện thân thiện, dễ cài đặt và vận hành.</p>',
+            'short_description' => [
+                'vi' => 'Trung tâm báo cháy 8 kênh, quản lý tập trung toàn bộ hệ thống.',
+                'en' => '8-zone fire alarm panel, centralized management of the entire system.',
+            ],
+            'description' => [
+                'vi' => '<p>Trung tâm báo cháy Honeywell 8 zone cho phép quản lý đến 8 khu vực độc lập. Hỗ trợ đầu báo khói, nhiệt, nút nhấn và còi báo động. Giao diện thân thiện, dễ cài đặt và vận hành.</p>',
+                'en' => '<p>Honeywell 8-zone fire alarm panel manages up to 8 independent zones. Supports smoke detectors, heat detectors, manual call points and alarm bells. User-friendly interface, easy to install and operate.</p>',
+            ],
             'technical_specs' => [
                 ['attribute_name' => 'Số zone', 'attribute_value' => '8 zone'],
                 ['attribute_name' => 'Điện áp hoạt động', 'attribute_value' => '220VAC / 24VDC dự phòng'],
@@ -282,11 +336,17 @@ class ProductSeeder extends Seeder
         Product::create([
             'category_id' => $powderExt->id,
             'brand_id' => 5, // Honeywell
-            'name' => 'Bình chữa cháy bột ABC 4kg',
+            'name' => ['vi' => 'Bình chữa cháy bột ABC 4kg', 'en' => 'ABC 4kg Powder Fire Extinguisher'],
             'slug' => Str::slug('Bình chữa cháy bột ABC 4kg'),
             'sku' => 'FE-POW-001',
-            'short_description' => 'Bình chữa cháy bột ABC 4kg phù hợp mọi loại đám cháy A, B, C.',
-            'description' => '<p>Bình chữa cháy bột ABC 4kg chữa được tất cả các loại đám cháy rắn (A), lỏng (B) và khí (C). Thiết kế nhỏ gọn, van xả an toàn, dễ sử dụng. Đã qua kiểm định PCCC.</p>',
+            'short_description' => [
+                'vi' => 'Bình chữa cháy bột ABC 4kg phù hợp mọi loại đám cháy A, B, C.',
+                'en' => 'ABC 4kg powder fire extinguisher suitable for all Class A, B, C fires.',
+            ],
+            'description' => [
+                'vi' => '<p>Bình chữa cháy bột ABC 4kg chữa được tất cả các loại đám cháy rắn (A), lỏng (B) và khí (C). Thiết kế nhỏ gọn, van xả an toàn, dễ sử dụng. Đã qua kiểm định PCCC.</p>',
+                'en' => '<p>ABC 4kg dry powder fire extinguisher capable of extinguishing solid (A), liquid (B) and gas (C) fires. Compact design, safety discharge valve, easy to use. Fire safety certified.</p>',
+            ],
             'technical_specs' => [
                 ['attribute_name' => 'Loại bột', 'attribute_value' => 'ABC - Amoni Phosphate'],
                 ['attribute_name' => 'Khối lượng bột', 'attribute_value' => '4kg'],
@@ -311,11 +371,17 @@ class ProductSeeder extends Seeder
         Product::create([
             'category_id' => $co2Ext->id,
             'brand_id' => 5, // Honeywell
-            'name' => 'Bình chữa cháy CO2 5kg',
+            'name' => ['vi' => 'Bình chữa cháy CO2 5kg', 'en' => 'CO2 5kg Fire Extinguisher'],
             'slug' => Str::slug('Bình chữa cháy CO2 5kg'),
             'sku' => 'FE-CO2-001',
-            'short_description' => 'Bình chữa cháy CO2 5kg sạch, không để lại cặn, an toàn cho thiết bị điện.',
-            'description' => '<p>Bình chữa cháy CO2 5kg sử dụng khí CO2 tinh khiết, không dẫn điện, không để lại cặn sau khi sử dụng. Lý tưởng cho phòng máy tính, trung tâm dữ liệu, phòng thiết bị điện tử.</p>',
+            'short_description' => [
+                'vi' => 'Bình chữa cháy CO2 5kg sạch, không để lại cặn, an toàn cho thiết bị điện.',
+                'en' => 'CO2 5kg clean fire extinguisher, leaves no residue, safe for electrical equipment.',
+            ],
+            'description' => [
+                'vi' => '<p>Bình chữa cháy CO2 5kg sử dụng khí CO2 tinh khiết, không dẫn điện, không để lại cặn sau khi sử dụng. Lý tưởng cho phòng máy tính, trung tâm dữ liệu, phòng thiết bị điện tử.</p>',
+                'en' => '<p>CO2 5kg fire extinguisher uses pure CO2 gas, non-conductive, leaves no residue after use. Ideal for computer rooms, data centers and electronic equipment rooms.</p>',
+            ],
             'technical_specs' => [
                 ['attribute_name' => 'Loại khí', 'attribute_value' => 'CO2 tinh khiết 99.5%'],
                 ['attribute_name' => 'Khối lượng CO2', 'attribute_value' => '5kg'],
@@ -339,11 +405,17 @@ class ProductSeeder extends Seeder
         Product::create([
             'category_id' => $accessDoor->id,
             'brand_id' => $bosch,
-            'name' => 'Cửa an ninh Bosch 3 cánh',
+            'name' => ['vi' => 'Cửa an ninh Bosch 3 cánh', 'en' => 'Bosch 3-Wing Security Door'],
             'slug' => Str::slug('Cửa an ninh Bosch 3 cánh'),
             'sku' => 'AC-BOSCH-001',
-            'short_description' => 'Cửa an ninh 3 cánh tích hợp kiểm soát ra vào, chịu lực cao.',
-            'description' => '<p>Cửa an ninh Bosch 3 cánh tích hợp hệ thống kiểm soát ra vào, cảm biến chống phá hoại. Thiết kế chịu lực cao, phù hợp cho các lối vào chính của tòa nhà và khu vực yêu cầu an ninh cao.</p>',
+            'short_description' => [
+                'vi' => 'Cửa an ninh 3 cánh tích hợp kiểm soát ra vào, chịu lực cao.',
+                'en' => '3-wing security door with integrated access control, high durability.',
+            ],
+            'description' => [
+                'vi' => '<p>Cửa an ninh Bosch 3 cánh tích hợp hệ thống kiểm soát ra vào, cảm biến chống phá hoại. Thiết kế chịu lực cao, phù hợp cho các lối vào chính của tòa nhà và khu vực yêu cầu an ninh cao.</p>',
+                'en' => '<p>Bosch 3-wing security door with integrated access control system and tamper sensors. High-durability design, suitable for building main entrances and high-security areas.</p>',
+            ],
             'technical_specs' => [
                 ['attribute_name' => 'Số cánh', 'attribute_value' => '3 cánh'],
                 ['attribute_name' => 'Chất liệu', 'attribute_value' => 'Thép không gỉ SUS304'],
@@ -366,11 +438,17 @@ class ProductSeeder extends Seeder
         Product::create([
             'category_id' => $cardReader->id,
             'brand_id' => $bosch,
-            'name' => 'Đầu đọc thẻ RFID Bosch',
+            'name' => ['vi' => 'Đầu đọc thẻ RFID Bosch', 'en' => 'Bosch RFID Card Reader'],
             'slug' => Str::slug('Đầu đọc thẻ RFID Bosch'),
             'sku' => 'CR-BOSCH-001',
-            'short_description' => 'Đầu đọc thẻ RFID 125KHz chống nước, giao tiếp Wiegand 26-bit.',
-            'description' => '<p>Đầu đọc thẻ RFID Bosch hoạt động ở tần số 125KHz, giao tiếp chuẩn Wiegand 26-bit. Thiết kế chống nước IP65, lắp đặt ngoài trời. Phù hợp hệ thống kiểm soát ra vào doanh nghiệp.</p>',
+            'short_description' => [
+                'vi' => 'Đầu đọc thẻ RFID 125KHz chống nước, giao tiếp Wiegand 26-bit.',
+                'en' => '125KHz RFID card reader, waterproof, Wiegand 26-bit communication.',
+            ],
+            'description' => [
+                'vi' => '<p>Đầu đọc thẻ RFID Bosch hoạt động ở tần số 125KHz, giao tiếp chuẩn Wiegand 26-bit. Thiết kế chống nước IP65, lắp đặt ngoài trời. Phù hợp hệ thống kiểm soát ra vào doanh nghiệp.</p>',
+                'en' => '<p>Bosch RFID card reader operates at 125KHz with standard Wiegand 26-bit communication. IP65 waterproof design for outdoor installation. Suitable for enterprise access control systems.</p>',
+            ],
             'technical_specs' => [
                 ['attribute_name' => 'Tần số', 'attribute_value' => '125KHz'],
                 ['attribute_name' => 'Chuẩn giao tiếp', 'attribute_value' => 'Wiegand 26-bit'],
