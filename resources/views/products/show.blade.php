@@ -66,11 +66,11 @@
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container text-center py-5">
-        <h1 class="display-2 text-dark mb-4 animated slideInDown">Chi tiết sản phẩm</h1>
+        <h1 class="display-2 text-dark mb-4 animated slideInDown">{{ __('products.detail_title') }}</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('products.index') }}">Sản phẩm</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('navigation.home') }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('products.index') }}">{{ __('navigation.products') }}</a></li>
                 @if($product->category)
                     <li class="breadcrumb-item"><a href="{{ route('categories.show', $product->category->slug) }}">{{ $product->category->name }}</a></li>
                 @endif
@@ -91,10 +91,10 @@
                     <div class="product-gallery-main">
                         @php $mainImage = $product->images[0] ?? null; @endphp
                         <img src="{{ $mainImage ? asset('storage/' . $mainImage) : asset('img/product-1.jpg') }}" alt="{{ $product->name }}" id="mainImage">
-                        <button class="gallery-nav gallery-nav-prev" onclick="prevImage()" aria-label="Ảnh trước">
+                        <button class="gallery-nav gallery-nav-prev" onclick="prevImage()" aria-label="{{ __('common.gallery_prev') }}">
                             <i class="bi bi-chevron-left"></i>
                         </button>
-                        <button class="gallery-nav gallery-nav-next" onclick="nextImage()" aria-label="Ảnh tiếp">
+                        <button class="gallery-nav gallery-nav-next" onclick="nextImage()" aria-label="{{ __('common.gallery_next') }}">
                             <i class="bi bi-chevron-right"></i>
                         </button>
                     </div>
@@ -102,7 +102,7 @@
                     <div class="product-gallery-thumbs" id="galleryThumbs">
                         @foreach($product->images as $index => $image)
                             <div class="product-thumb {{ $index === 0 ? 'active' : '' }}" onclick="selectImage({{ $index }})">
-                                <img src="{{ asset('storage/' . $image) }}" alt="Ảnh {{ $index + 1 }}">
+                                <img src="{{ asset('storage/' . $image) }}" alt="{{ __('common.gallery_image') }} {{ $index + 1 }}">
                             </div>
                         @endforeach
                     </div>
@@ -111,19 +111,19 @@
 
                 <!-- Product Description -->
                 <div class="product-description mt-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <h3>Mô tả sản phẩm</h3>
+                    <h3>{{ __('products.description') }}</h3>
                     <div>{!! nl2br(e($product->description)) !!}</div>
                 </div>
 
                 <!-- Technical Specifications -->
                 @if($product->technical_specs && is_array($product->technical_specs) && count($product->technical_specs) > 0)
                 <div class="product-specs-section mt-4 wow fadeInUp" data-wow-delay="0.4s">
-                    <h3>Thông số kỹ thuật</h3>
+                    <h3>{{ __('products.technical_specs') }}</h3>
                     <table class="product-specs">
                         <thead>
                             <tr>
-                                <th>Thông số</th>
-                                <th>Giá trị</th>
+                                <th>{{ __('products.spec_name') }}</th>
+                                <th>{{ __('products.spec_value') }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -145,11 +145,11 @@
                         <i class="bi bi-file-pdf"></i>
                     </div>
                     <div class="product-brochure-text">
-                        <h4>Tải brochure sản phẩm</h4>
-                        <p>Tài liệu thông số kỹ thuật chi tiết, hướng dẫn sử dụng và thông tin bảo hành.</p>
+                        <h4>{{ __('products.download_brochure') }}</h4>
+                        <p>{{ __('products.brochure_description') }}</p>
                     </div>
                     <a href="{{ asset('storage/' . $product->brochure) }}" class="btn-brochure ms-auto" target="_blank">
-                        <i class="bi bi-download"></i> Tải PDF
+                        <i class="bi bi-download"></i> {{ __('products.download_pdf') }}
                     </a>
                 </div>
                 @endif
@@ -159,42 +159,42 @@
             <div class="col-lg-5">
                 <div class="product-info-sidebar wow fadeInUp" data-wow-delay="0.2s">
                     <h1>{{ $product->name }}</h1>
-                    <span class="product-code">Mã sản phẩm: {{ $product->sku }}</span>
+                    <span class="product-code">{{ __('products.product_code') }}: {{ $product->sku }}</span>
 
                     <div class="product-meta">
                         @if($product->brand)
                         <div class="product-meta-item">
-                            <span class="product-meta-label">Hãng sản xuất</span>
+                            <span class="product-meta-label">{{ __('products.brand') }}</span>
                             <span class="product-meta-value">{{ $product->brand->name }}</span>
                         </div>
                         @endif
                         @if($product->category)
                         <div class="product-meta-item">
-                            <span class="product-meta-label">Danh mục</span>
+                            <span class="product-meta-label">{{ __('products.category') }}</span>
                             <span class="product-meta-value">{{ $product->category->name }}</span>
                         </div>
                         @endif
                         <div class="product-meta-item">
-                            <span class="product-meta-label">Đơn vị tính</span>
+                            <span class="product-meta-label">{{ __('products.unit') }}</span>
                             <span class="product-meta-value">{{ $product->unit }}</span>
                         </div>
                         <div class="product-meta-item">
-                            <span class="product-meta-label">Số lượng tối thiểu</span>
+                            <span class="product-meta-label">{{ __('products.min_order_qty') }}</span>
                             <span class="product-meta-value">{{ $product->min_order_qty }} {{ $product->unit }}</span>
                         </div>
                         <div class="product-meta-item">
-                            <span class="product-meta-label">Tình trạng</span>
-                            <span class="product-meta-value text-success">Còn hàng</span>
+                            <span class="product-meta-label">{{ __('products.status') }}</span>
+                            <span class="product-meta-value text-success">{{ __('common.in_stock') }}</span>
                         </div>
                     </div>
 
                     <div class="product-actions">
                         <button type="button" class="btn-quote" data-bs-toggle="modal" data-bs-target="#quoteModal">
-                            <i class="bi bi-envelope"></i> Yêu cầu báo giá
+                            <i class="bi bi-envelope"></i> {{ __('products.request_quote') }}
                         </button>
                         @if($product->brochure)
                             <a href="{{ asset('storage/' . $product->brochure) }}" class="btn-brochure" target="_blank">
-                                <i class="bi bi-file-pdf"></i> Tải brochure kỹ thuật
+                                <i class="bi bi-file-pdf"></i> {{ __('products.download_brochure') }}
                             </a>
                         @endif
                     </div>
@@ -205,7 +205,7 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="quoteModalLabel">Yêu cầu báo giá: {{ $product->name }}</h5>
+                                <h5 class="modal-title" id="quoteModalLabel">{{ __('common.quote_for') }}: {{ $product->name }}</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form action="{{ route('inquiries.store') }}" method="POST">
@@ -214,7 +214,7 @@
                                 <div class="modal-body">
                                     @if($errors->any())
                                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                            <strong><i class="bi bi-exclamation-triangle me-2"></i>Vui lòng kiểm tra lại thông tin:</strong>
+                                            <strong><i class="bi bi-exclamation-triangle me-2"></i>{{ __('common.form_validation_error') }}</strong>
                                             <ul class="mb-0 mt-1">
                                                 @foreach($errors->all() as $error)
                                                     <li>{{ $error }}</li>
@@ -233,40 +233,40 @@
 
                                     <div class="row g-3">
                                         <div class="col-md-6">
-                                            <label for="quote_name" class="form-label">Họ và tên <span class="text-danger">*</span></label>
+                                            <label for="quote_name" class="form-label">{{ __('common.full_name') }} <span class="text-danger">*</span></label>
                                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="quote_name" name="name" value="{{ old('name') }}" required>
                                             @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="quote_email" class="form-label">Email <span class="text-danger">*</span></label>
+                                            <label for="quote_email" class="form-label">{{ __('common.email') }} <span class="text-danger">*</span></label>
                                             <input type="email" class="form-control @error('email') is-invalid @enderror" id="quote_email" name="email" value="{{ old('email') }}" required>
                                             @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="quote_phone" class="form-label">Số điện thoại</label>
+                                            <label for="quote_phone" class="form-label">{{ __('common.phone') }}</label>
                                             <input type="text" class="form-control @error('phone') is-invalid @enderror" id="quote_phone" name="phone" value="{{ old('phone') }}">
                                             @error('phone') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="quote_company" class="form-label">Công ty</label>
+                                            <label for="quote_company" class="form-label">{{ __('common.company') }}</label>
                                             <input type="text" class="form-control @error('company') is-invalid @enderror" id="quote_company" name="company" value="{{ old('company') }}">
                                             @error('company') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="quote_quantity" class="form-label">Số lượng</label>
+                                            <label for="quote_quantity" class="form-label">{{ __('common.quantity') }}</label>
                                             <input type="number" class="form-control @error('quantity') is-invalid @enderror" id="quote_quantity" name="quantity" value="{{ old('quantity') }}" min="1">
                                             @error('quantity') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                         </div>
                                         <div class="col-12">
-                                            <label for="quote_message" class="form-label">Nội dung <span class="text-danger">*</span></label>
+                                            <label for="quote_message" class="form-label">{{ __('common.message') }} <span class="text-danger">*</span></label>
                                             <textarea class="form-control @error('message') is-invalid @enderror" id="quote_message" name="message" rows="4" required>{{ old('message') }}</textarea>
                                             @error('message') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                                    <button type="submit" class="btn btn-primary">Gửi yêu cầu</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('common.cancel') }}</button>
+                                    <button type="submit" class="btn btn-primary">{{ __('common.send_request') }}</button>
                                 </div>
                             </form>
                         </div>
@@ -278,13 +278,13 @@
         <!-- Related Products -->
         @if($relatedProducts->count() > 0)
         <div class="related-products mt-5 wow fadeInUp" data-wow-delay="0.6s">
-            <h2>Sản phẩm liên quan</h2>
+            <h2>{{ __('products.related_products') }}</h2>
             <div class="row g-4">
                 @foreach($relatedProducts as $related)
                     <div class="col-lg-3 col-md-6">
                         <div class="product-card-b2b">
                             @if($related->is_featured)
-                                <span class="product-badge">Nổi bật</span>
+                                <span class="product-badge">{{ __('common.featured') }}</span>
                             @endif
                             <img class="card-img" src="{{ isset($related->images[0]) ? asset('storage/' . $related->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $related->name }}">
                             <div class="card-body">
@@ -293,8 +293,8 @@
                                 <p class="card-text">{{ Str::limit($related->short_description, 80) }}</p>
                             </div>
                             <div class="card-footer">
-                                <a href="{{ route('products.show', $related->slug) }}" class="btn-detail"><i class="bi bi-eye me-1"></i> Chi tiết</a>
-                                <a href="{{ route('products.show', $related->slug) }}" class="btn-quote-sm"><i class="bi bi-envelope me-1"></i> Báo giá</a>
+                                <a href="{{ route('products.show', $related->slug) }}" class="btn-detail"><i class="bi bi-eye me-1"></i> {{ __('common.view_detail') }}</a>
+                                <a href="{{ route('products.show', $related->slug) }}" class="btn-quote-sm"><i class="bi bi-envelope me-1"></i> {{ __('common.get_quote') }}</a>
                             </div>
                         </div>
                     </div>
