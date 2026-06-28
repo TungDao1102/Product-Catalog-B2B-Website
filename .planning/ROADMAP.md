@@ -101,7 +101,7 @@
   - PostResource — quản lý tin tức/blog
   - ProjectResource — quản lý dự án tiêu biểu
   - InquiryResource — quản lý yêu cầu báo giá
-  - ContactInquiryResource — quản lý liên hệ
+  - ContactResource — quản lý liên hệ
 - **Frontend (Blade):**
   - Trang tin tức — danh sách + chi tiết bài viết
   - Trang dự án — danh sách + chi tiết dự án
@@ -113,10 +113,21 @@
 
 **Dependencies:** Phase 1
 
+**Plans:** 5 plans
+
+| Plan | Wave | Type | Objective |
+|------|------|------|-----------|
+| 03-01 | 1 | execute | Models, Mailables & Seeders — populate 4 Eloquent models, 2 Mailable classes, PostSeeder & ProjectSeeder |
+| 03-02 | 2 | execute | Post & Project Filament Resources (CRUD) — PostResource (RichEditor), ProjectResource (FileUpload gallery) |
+| 03-03 | 2 | execute | Inquiry & Contact Filament Resources (read-only) — ViewRecord + mark is_read + DeleteAction |
+| 03-04 | 3 | execute | Post & Project Frontend — Controllers, Blade views (index + show), pagination, image gallery |
+| 03-05 | 3 | execute | Contact form, Quote modal, Navbar, Email, Tests — 2 Controllers, 3 view updates, 6 test files |
+
 **Verification:**
 - Form liên hệ gửi được, admin nhận email
 - Yêu cầu báo giá từ sản phẩm lưu DB + gửi email
 - Tin tức, dự án hiển thị đúng frontend
+- Tất cả tests pass: `php artisan test --filter=Phase3`
 
 ---
 
