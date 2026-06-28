@@ -24,19 +24,21 @@ class ProductController extends Controller
         // Search
         if ($search = request('search')) {
             $query->where(function ($q) use ($search) {
-                $q->where('name', 'like', "%{$search}%")
+                $q->where('name->vi', 'like', "%{$search}%")
+                  ->orWhere('name->en', 'like', "%{$search}%")
                   ->orWhere('sku', 'like', "%{$search}%")
-                  ->orWhere('short_description', 'like', "%{$search}%");
+                  ->orWhere('short_description->vi', 'like', "%{$search}%")
+                  ->orWhere('short_description->en', 'like', "%{$search}%");
             });
         }
 
         // Sort
         switch (request('sort')) {
             case 'name_asc':
-                $query->orderBy('name');
+                $query->orderBy('name->vi');
                 break;
             case 'name_desc':
-                $query->orderBy('name', 'desc');
+                $query->orderBy('name->vi', 'desc');
                 break;
             case 'newest':
                 $query->orderBy('created_at', 'desc');
