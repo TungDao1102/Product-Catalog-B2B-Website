@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: "**Gồm:** Phase 0 → Phase 5"
-status: Phase 3 execution complete (42 tests pass)
-stopped_at: Phase 3 execution complete
-last_updated: "2026-06-28T17:00:00.000Z"
+status: Phase 3 execution complete (78 tests pass, verify script created)
+stopped_at: Phase 3 ready — all code committed
+last_updated: "2026-06-28T18:00:00.000Z"
 progress:
   total_phases: 6
   completed_phases: 4
@@ -15,8 +15,8 @@ progress:
 
 # STATE.md
 
-**Version:** 1.3
-**Status:** Phase 2 — Completed and verified | Phase 3 — Completed and verified (42 tests pass)
+**Version:** 1.4
+**Status:** Phase 2 — Completed and verified | Phase 3 — Completed and verified (78 tests, 158 assertions)
 
 ## Milestones
 
@@ -31,7 +31,7 @@ progress:
 | 0 | Hoàn thiện Frontend Template | ✓ Verified | — | product-detail.html, store.html, category.html, b2b.css |
 | 1 | Nền tảng (Foundation) | ✓ Verified | Phase 0 | Laravel + DB + Filament + Blade views + Controllers + Routes |
 | 2 | Quản lý sản phẩm (Product Management) | ✓ Verified | Phase 1 | Models, Seeders, Filament Resources, Frontend views, Tests |
-| 3 | Nội dung & Liên hệ (Content & Contact) | ✓ Verified | Phase 1 | 5 plans executed, 42 tests passing (87 assertions) |
+| 3 | Nội dung & Liên hệ (Content & Contact) | ✓ Verified | Phase 1 | 5 plans executed, 78 tests passing (158 assertions), verify script added |
 | 4 | Đa ngôn ngữ & SEO | Pending | Phase 2, 3 | i18n + SEO basics |
 | 5 | Hoàn thiện & Triển khai | Pending | Phase 2, 3, 4 | Optimization, deployment |
 
