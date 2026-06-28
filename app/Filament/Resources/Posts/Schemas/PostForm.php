@@ -40,7 +40,7 @@ class PostForm
                                 'bold', 'italic', 'underline', 'strike',
                                 'h2', 'h3',
                                 'bulletList', 'orderedList', 'blockquote',
-                                'link', 'image', 'undo', 'redo',
+                                'link', 'undo', 'redo',
                             ]),
                         FileUpload::make('image')
                             ->image()
