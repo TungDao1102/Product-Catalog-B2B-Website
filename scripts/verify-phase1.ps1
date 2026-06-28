@@ -187,7 +187,7 @@ try {
 } catch { }
 
 if (-not $serverUp) {
-    Write-Host "  [SKIP] Dev server not running - run .\run.ps1 first" -ForegroundColor Yellow
+    Write-Host "  [SKIP] Dev server not running - run .\scripts\run.ps1 first" -ForegroundColor Yellow
     Write-Host "  [SKIP] Then re-run this script to verify HTTP responses.`n" -ForegroundColor Yellow
 } else {
     Test-Check -Name "Admin panel at /admin/login" -Script {

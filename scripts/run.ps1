@@ -95,6 +95,6 @@ Write-Host "  Database:  product_catalog (root/root123)" -ForegroundColor White
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "-- Quick Commands ------------------------------------------------" -ForegroundColor Cyan
-Write-Host "  .\run.ps1          Start all + auto-refresh browser" -ForegroundColor White
-Write-Host "  .\stop.ps1         Stop all servers" -ForegroundColor White
+Write-Host "  .\scripts\run.ps1  Start all + auto-refresh browser" -ForegroundColor White
+Write-Host "  .\scripts\stop.ps1 Stop all servers" -ForegroundColor White
 Write-Host "----------------------------------------------------------------" -ForegroundColor Cyan
