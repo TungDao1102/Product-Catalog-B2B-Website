@@ -12,9 +12,11 @@ use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Table;
+use LaraZeus\SpatieTranslatable\Resources\Concerns\Translatable;
 
 class ProjectResource extends Resource
 {
+    use Translatable;
     protected static ?string $model = Project::class;
 
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-folder-open';
@@ -28,6 +30,11 @@ class ProjectResource extends Resource
     protected static ?string $pluralModelLabel = 'Dự án';
 
     protected static ?string $recordTitleAttribute = 'title';
+
+    public static function getTranslatableLocales(): array
+    {
+        return ['vi', 'en'];
+    }
 
     public static function form(Schema $schema): Schema
     {
