@@ -89,7 +89,8 @@
             <div class="col-lg-7">
                 <div class="product-gallery wow fadeInUp" data-wow-delay="0.1s">
                     <div class="product-gallery-main">
-                        <img src="{{ $product->images[0] ?? asset('img/product-1.jpg') }}" alt="{{ $product->name }}" id="mainImage">
+                        @php $mainImage = $product->images[0] ?? null; @endphp
+                        <img src="{{ $mainImage ? asset('storage/' . $mainImage) : asset('img/product-1.jpg') }}" alt="{{ $product->name }}" id="mainImage">
                         <button class="gallery-nav gallery-nav-prev" onclick="prevImage()" aria-label="Ảnh trước">
                             <i class="bi bi-chevron-left"></i>
                         </button>
@@ -101,7 +102,7 @@
                     <div class="product-gallery-thumbs" id="galleryThumbs">
                         @foreach($product->images as $index => $image)
                             <div class="product-thumb {{ $index === 0 ? 'active' : '' }}" onclick="selectImage({{ $index }})">
-                                <img src="{{ $image }}" alt="Ảnh {{ $index + 1 }}">
+                                <img src="{{ asset('storage/' . $image) }}" alt="Ảnh {{ $index + 1 }}">
                             </div>
                         @endforeach
                     </div>
@@ -115,7 +116,7 @@
                 </div>
 
                 <!-- Technical Specifications -->
-                @if($product->technical_specs)
+                @if($product->technical_specs && is_array($product->technical_specs) && count($product->technical_specs) > 0)
                 <div class="product-specs-section mt-4 wow fadeInUp" data-wow-delay="0.4s">
                     <h3>Thông số kỹ thuật</h3>
                     <table class="product-specs">
@@ -126,10 +127,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($product->technical_specs as $spec => $value)
+                            @foreach($product->technical_specs as $spec)
                                 <tr>
-                                    <td>{{ $spec }}</td>
-                                    <td>{{ $value }}</td>
+                                    <td>{{ $spec['attribute_name'] ?? '' }}</td>
+                                    <td>{{ $spec['attribute_value'] ?? '' }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -147,7 +148,7 @@
                         <h4>Tải brochure sản phẩm</h4>
                         <p>Tài liệu thông số kỹ thuật chi tiết, hướng dẫn sử dụng và thông tin bảo hành.</p>
                     </div>
-                    <a href="{{ asset($product->brochure) }}" class="btn-brochure ms-auto" target="_blank">
+                    <a href="{{ asset('storage/' . $product->brochure) }}" class="btn-brochure ms-auto" target="_blank">
                         <i class="bi bi-download"></i> Tải PDF
                     </a>
                 </div>
@@ -192,7 +193,7 @@
                             <i class="bi bi-envelope"></i> Yêu cầu báo giá
                         </a>
                         @if($product->brochure)
-                            <a href="{{ asset($product->brochure) }}" class="btn-brochure" target="_blank">
+                            <a href="{{ asset('storage/' . $product->brochure) }}" class="btn-brochure" target="_blank">
                                 <i class="bi bi-file-pdf"></i> Tải brochure kỹ thuật
                             </a>
                         @endif
@@ -212,7 +213,7 @@
                             @if($related->is_featured)
                                 <span class="product-badge">Nổi bật</span>
                             @endif
-                            <img class="card-img" src="{{ $related->images[0] ?? asset('img/product-1.jpg') }}" alt="{{ $related->name }}">
+                            <img class="card-img" src="{{ isset($related->images[0]) ? asset('storage/' . $related->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $related->name }}">
                             <div class="card-body">
                                 <div class="card-brand">{{ $related->brand->name ?? $related->category->name ?? '' }}</div>
                                 <h5 class="card-title"><a href="{{ route('products.show', $related->slug) }}">{{ $related->name }}</a></h5>

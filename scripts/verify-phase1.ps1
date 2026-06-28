@@ -7,7 +7,8 @@
 #>
 
 $ErrorActionPreference = 'Stop'
-$ProjectRoot = Split-Path -Parent $PSCommandPath
+$ScriptDir  = Split-Path -Parent $PSCommandPath
+$ProjectRoot = Split-Path -Parent $ScriptDir
 Set-Location -LiteralPath $ProjectRoot
 
 $PHP      = "C:\Users\daotu\AppData\Local\Microsoft\WinGet\Packages\PHP.PHP.8.3_Microsoft.Winget.Source_8wekyb3d8bbwe\php.exe"

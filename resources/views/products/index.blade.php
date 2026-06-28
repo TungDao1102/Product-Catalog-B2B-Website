@@ -36,24 +36,9 @@
                         </form>
                     </div>
 
-                    <!-- Category Filter -->
+                    <!-- Category Tree -->
                     <div class="filter-section">
-                        <h5>Danh mục</h5>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="category_radio" id="catAll"
-                                {{ !request('category') ? 'checked' : '' }}
-                                onchange="window.location='{{ route('products.index') }}'">
-                            <label class="form-check-label" for="catAll">Tất cả danh mục</label>
-                        </div>
-                        @foreach($categories as $category)
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="category_radio"
-                                    id="cat{{ $category->id }}"
-                                    {{ request('category') == $category->slug ? 'checked' : '' }}
-                                    onchange="window.location='{{ route('products.index', ['category' => $category->slug]) }}'">
-                                <label class="form-check-label" for="cat{{ $category->id }}">{{ $category->name }}</label>
-                            </div>
-                        @endforeach
+                        <x-category-tree :categories="$categories" :activeCategorySlug="request('category')" />
                     </div>
 
                     <!-- Brand Filter -->
@@ -106,7 +91,7 @@
                                 @if($product->is_featured)
                                     <span class="product-badge">Nổi bật</span>
                                 @endif
-                                <img class="card-img" src="{{ $product->images[0] ?? asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
+                                <img class="card-img" src="{{ isset($product->images[0]) ? asset('storage/' . $product->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
                                 <div class="card-body">
                                     <div class="card-brand">{{ $product->brand->name ?? $product->category->name ?? '' }}</div>
                                     <h5 class="card-title"><a href="{{ route('products.show', $product->slug) }}">{{ $product->name }}</a></h5>

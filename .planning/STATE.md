@@ -4,7 +4,7 @@ milestone: v1.0
 milestone_name: "**Gồm:** Phase 0 → Phase 5"
 status: Project initialized, not yet started
 stopped_at: Phase 2 plans created
-last_updated: "2026-06-27T14:32:16.888Z"
+last_updated: "2026-06-28T00:00:00.000Z"
 progress:
   total_phases: 2
   completed_phases: 0
@@ -35,10 +35,6 @@ progress:
 | 4 | Đa ngôn ngữ & SEO | Pending | Phase 2, 3 | i18n + SEO basics |
 | 5 | Hoàn thiện & Triển khai | Pending | Phase 2, 3, 4 | Optimization, deployment |
 
-## Current Phase
-
-**Phase 2** (Product Management) — Pending.
-
 ## Key Artifacts
 
 | Artifact | Path | Status |
@@ -50,6 +46,7 @@ progress:
 | State | `.planning/STATE.md` | ✓ Done |
 | Config | `.planning/config.json` | ✓ Done |
 | Frontend Template | `template-frontend/` | ✓ Enhanced |
+| Dev Scripts | `scripts/` (run.ps1, stop.ps1, verify-phase1.ps1) | ✓ Set up |
 
 ## Next Action
 

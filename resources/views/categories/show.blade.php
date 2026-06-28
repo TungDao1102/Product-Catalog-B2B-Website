@@ -57,19 +57,14 @@
                         </form>
                     </div>
 
-                    <!-- Sub-category Filter -->
-                    @if($subCategories->count() > 0)
+                    <!-- Category Tree -->
                     <div class="filter-section">
-                        <h5>Danh mục con</h5>
-                        @foreach($subCategories as $sub)
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="sub" id="sub{{ $sub->id }}"
-                                    onchange="window.location='{{ route('categories.show', $sub->slug) }}'">
-                                <label class="form-check-label" for="sub{{ $sub->id }}">{{ $sub->name }}</label>
-                            </div>
-                        @endforeach
+                        @if(isset($rootCategories))
+                            <x-category-tree :categories="$rootCategories" :activeCategorySlug="$category->slug" />
+                        @else
+                            <x-category-tree :categories="collect([$category])" :activeCategorySlug="$category->slug" />
+                        @endif
                     </div>
-                    @endif
 
                     <a href="{{ route('categories.show', $category->slug) }}" class="btn btn-primary w-100 rounded-pill py-2">Áp dụng bộ lọc</a>
                 </div>
@@ -103,7 +98,7 @@
                                 @if($product->is_featured)
                                     <span class="product-badge">Nổi bật</span>
                                 @endif
-                                <img class="card-img" src="{{ $product->images[0] ?? asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
+                                <img class="card-img" src="{{ isset($product->images[0]) ? asset('storage/' . $product->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
                                 <div class="card-body">
                                     <div class="card-brand">{{ $product->brand->name ?? '' }}</div>
                                     <h5 class="card-title"><a href="{{ route('products.show', $product->slug) }}">{{ $product->name }}</a></h5>

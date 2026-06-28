@@ -58,7 +58,7 @@
         <div class="owl-carousel product-carousel wow fadeInUp" data-wow-delay="0.5s">
             @forelse($featuredProducts as $product)
                 <a href="{{ route('products.show', $product->slug) }}" class="d-block product-item rounded">
-                    <img src="{{ $product->images[0] ?? asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
+                    <img src="{{ isset($product->images[0]) ? asset('storage/' . $product->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
                     <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
                         <h4 class="text-primary">{{ $product->name }}</h4>
                         <span class="text-body">{{ $product->short_description }}</span>
@@ -145,7 +145,7 @@
                         @if($product->is_featured)
                             <span class="product-badge">Nổi bật</span>
                         @endif
-                        <img class="card-img" src="{{ $product->images[0] ?? asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
+                        <img class="card-img" src="{{ isset($product->images[0]) ? asset('storage/' . $product->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
                         <div class="card-body">
                             <div class="card-brand">{{ $product->brand->name ?? '' }}</div>
                             <h5 class="card-title"><a href="{{ route('products.show', $product->slug) }}">{{ $product->name }}</a></h5>

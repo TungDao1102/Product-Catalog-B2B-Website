@@ -49,7 +49,11 @@ class ProductController extends Controller
         }
 
         $products = $query->paginate(9)->withQueryString();
-        $categories = Category::whereNull('parent_id')->where('is_active', true)->get();
+        $categories = Category::with('children')
+            ->whereNull('parent_id')
+            ->where('is_active', true)
+            ->orderBy('sort_order')
+            ->get();
         $brands = Brand::where('is_active', true)->get();
 
         return view('products.index', compact('products', 'categories', 'brands'));

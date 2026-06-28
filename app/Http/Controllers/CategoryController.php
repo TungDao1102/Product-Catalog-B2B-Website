@@ -9,12 +9,19 @@ class CategoryController extends Controller
 {
     public function show($slug)
     {
-        $category = Category::where('slug', $slug)
+        $category = Category::with('children')
+            ->where('slug', $slug)
             ->where('is_active', true)
             ->firstOrFail();
 
         $subCategories = Category::where('parent_id', $category->id)
             ->where('is_active', true)
+            ->get();
+
+        $rootCategories = Category::with('children')
+            ->whereNull('parent_id')
+            ->where('is_active', true)
+            ->orderBy('sort_order')
             ->get();
 
         $query = Product::with(['category', 'brand'])
@@ -53,6 +60,6 @@ class CategoryController extends Controller
 
         $products = $query->paginate(9)->withQueryString();
 
-        return view('categories.show', compact('category', 'subCategories', 'products'));
+        return view('categories.show', compact('category', 'subCategories', 'rootCategories', 'products'));
     }
 }
