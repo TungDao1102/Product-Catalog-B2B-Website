@@ -2,21 +2,21 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: "**Gồm:** Phase 0 → Phase 5"
-status: Phase 3 context gathered
-stopped_at: Phase 3 context gathered
-last_updated: "2026-06-28T13:00:00.000Z"
+status: Phase 3 planning complete
+stopped_at: Phase 3 planning complete
+last_updated: "2026-06-28T16:00:00.000Z"
 progress:
   total_phases: 6
   completed_phases: 3
-  total_plans: 11
+  total_plans: 16
   completed_plans: 11
   percent: 50
 ---
 
 # STATE.md
 
-**Version:** 1.1
-**Status:** Phase 2 — Completed and verified
+**Version:** 1.2
+**Status:** Phase 2 — Completed and verified | Phase 3 — Planned (ready for execution)
 
 ## Milestones
 
@@ -31,7 +31,7 @@ progress:
 | 0 | Hoàn thiện Frontend Template | ✓ Verified | — | product-detail.html, store.html, category.html, b2b.css |
 | 1 | Nền tảng (Foundation) | ✓ Verified | Phase 0 | Laravel + DB + Filament + Blade views + Controllers + Routes |
 | 2 | Quản lý sản phẩm (Product Management) | ✓ Verified | Phase 1 | Models, Seeders, Filament Resources, Frontend views, Tests |
-| 3 | Nội dung & Liên hệ (Content & Contact) | Pending | Phase 1 | News, projects, contact, quote requests |
+| 3 | Nội dung & Liên hệ (Content & Contact) | Planned | Phase 1 | 5 plans ready (Models → Resources → Frontend → Email + Tests) |
 | 4 | Đa ngôn ngữ & SEO | Pending | Phase 2, 3 | i18n + SEO basics |
 | 5 | Hoàn thiện & Triển khai | Pending | Phase 2, 3, 4 | Optimization, deployment |
 
@@ -80,13 +80,48 @@ progress:
 | Dev Scripts | `scripts/` (run.ps1, stop.ps1, verify-phase1.ps1) | ✓ Set up |
 | Phase 2 Plans | `.planning/phases/02-qu-n-l-s-n-ph-m-product-management/` | ✓ 5 plans |
 | Phase 2 Summaries | `.planning/phases/02-qu-n-l-s-n-ph-m-product-management/` | ✓ 5 summaries |
+| Phase 3 Context | `.planning/phases/03/03-CONTEXT.md` | ✓ 24 decisions in 10 categories |
+| Phase 3 Research | `.planning/phases/03/03-RESEARCH.md` | ✓ Technical research with code examples |
+| Phase 3 Plans | `.planning/phases/03/` | ✓ 5 plans ready for execution |
+
+## Phase 3 Plans
+
+### Plan 03-01 — Models, Mailables, Seeders (Wave 1)
+- 4 models (Post, Project, Contact, Inquiry) with #[Fillable], casts, relationships
+- 2 Mailable classes (AdminNotification, CustomerConfirmation) + 2 email Blade templates
+- PostSeeder (3-5 posts), ProjectSeeder (3-5 projects)
+- [PLAN](.planning/phases/03/03-01-PLAN.md)
+
+### Plan 03-02 — Post & Project Resources (Wave 2)
+- PostResource (CRUD) with RichEditor content, image upload, ToggleColumn for is_published
+- ProjectResource (CRUD) with FileUpload multiple for JSON images gallery
+- PostResourceTest + ProjectResourceTest
+- [PLAN](.planning/phases/03/03-02-PLAN.md)
+
+### Plan 03-03 — Inquiry & Contact Resources (Wave 2)
+- InquiryResource (read-only) with ViewRecord, auto-mark is_read, DeleteAction
+- ContactResource (read-only) with ViewRecord, auto-mark is_read, DeleteAction
+- InquiryResourceTest + ContactResourceTest
+- [PLAN](.planning/phases/03/03-03-PLAN.md)
+
+### Plan 03-04 — Post & Project Frontend (Wave 3)
+- PostController with index/paginate + show/slug, 2 Blade views (index+show)
+- ProjectController with index/paginate + show/slug, 2 Blade views (index+show with gallery)
+- Routes: /tin-tuc, /du-an — PostFrontendTest + ProjectFrontendTest
+- [PLAN](.planning/phases/03/03-04-PLAN.md)
+
+### Plan 03-05 — Contact, Quote Modal, Navbar, Email, Tests (Wave 3)
+- ContactController (show+store), updated contact form (no subject, +phone+company, Google Maps preserved)
+- InquiryController (store), quote modal on product detail with session flash re-open
+- Navbar links (Tin tức, Dự án), MailTest, SeederTest, NavbarTest, ContactFormTest, InquiryFormTest
+- [PLAN](.planning/phases/03/03-05-PLAN.md)
 
 ## Next Action
 
-Proceed to **Phase 3** planning: Create plans for PostResource, ProjectResource, InquiryResource, ContactResource, frontend Blade views, contact form, quote modal, and email integration.
+Proceed to **Phase 3 execution**: Run `/gsd-execute-phase 3` to execute plans by wave — Wave 1: 03-01, Wave 2: 03-02+03-03 (parallel), Wave 3: 03-04+03-05 (serial after Wave 1+2).
 
 ## Session
 
 **Last session:** 2026-06-28
-**Stopped at:** Phase 3 context gathered
-**Resume file:** .planning/phases/03/03-CONTEXT.md
+**Stopped at:** Phase 3 planning complete
+**Resume file:** .planning/phases/03/03-01-PLAN.md
