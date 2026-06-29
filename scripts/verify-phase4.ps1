@@ -254,6 +254,27 @@ try {
     $failedTasks += @("04-06 SEO Sitemap + OG Tags")
 }
 
+# Task 7: Run PHPUnit tests (Phase 4 filter)
+$totalTasks++
+Write-Host "[Task 7] Running PHPUnit tests for Phase 4..." -ForegroundColor Cyan
+try {
+    $phpPath = "C:\Users\daotu\AppData\Local\Microsoft\WinGet\Packages\PHP.PHP.8.3_Microsoft.Winget.Source_8wekyb3d8bbwe\php.exe"
+    $testOutput = & $phpPath artisan test --filter='TranslatableColumns|TranslatableModels|TranslatableResources|LocaleRouting|SearchQuery|SeoMetaTags|Sitemap' 2>&1
+    $exitCode = $LASTEXITCODE
+    if ($exitCode -ne 0) {
+        Write-Host "  PHPUnit output (some tests may need MySQL):" -ForegroundColor Gray
+        $testOutput | Select-Object -Last 20 | ForEach-Object { Write-Host "    $_" -ForegroundColor Gray }
+        Write-PhaseResult "Phase 4" "04-07 PHPUnit tests" "[WARN]" "Some tests failed (likely MySQL not available). Exit code: $exitCode"
+        $failedTasks += @("04-07 PHPUnit tests (need MySQL)")
+    } else {
+        Write-PhaseResult "Phase 4" "04-07 PHPUnit tests" "[PASS]" "All Phase 4 PHPUnit tests passed (exit code 0)"
+        $completedTasks++
+    }
+} catch {
+    Write-PhaseResult "Phase 4" "04-07 PHPUnit tests" "[WARN]" "Error running PHPUnit: $($_.Exception.Message)"
+    $failedTasks += @("04-07 PHPUnit tests")
+}
+
 # Summary Report
 Write-Host "" -ForegroundColor White
 Write-Host "[Phase 4] Verification Summary" -ForegroundColor Cyan

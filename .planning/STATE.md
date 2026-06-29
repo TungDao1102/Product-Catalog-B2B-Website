@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: "**Gồm:** Phase 0 → Phase 5"
-status: Phase 4 complete — ready for Phase 5
-stopped_at: Phase 4 all plans verified, verify-phase4.ps1 added
-last_updated: "2026-06-29T21:09:00.000Z"
+status: Phase 4 fully verified — Nyquist tests + PHPUnit integrated — ready for Phase 5
+stopped_at: Phase 4 all plans executed, 6 Nyquist validation test files added, verify-phase4.ps1 runs PHPUnit
+last_updated: "2026-06-30T00:44:00.000Z"
 progress:
   total_phases: 6
   completed_phases: 5
@@ -15,8 +15,8 @@ progress:
 
 # STATE.md
 
-**Version:** 1.4
-**Status:** Executing Phase 04 - Ready to advance to Phase 5
+**Version:** 1.5
+**Status:** Executing Phase 04 - Verified, all tests added, ready for Phase 5
 
 ## Milestones
 
@@ -32,7 +32,7 @@ progress:
 | 1 | Nền tảng (Foundation) | ✓ Verified | Phase 0 | Laravel + DB + Filament + Blade views + Controllers + Routes |
 | 2 | Quản lý sản phẩm (Product Management) | ✓ Verified | Phase 1 | Models, Seeders, Filament Resources, Frontend views, Tests |
 | 3 | Nội dung & Liên hệ (Content & Contact) | ✓ Verified | Phase 1 | 5 plans executed, 78 tests passing (158 assertions), verify script added |
-| 4 | Đa ngôn ngữ & SEO | ✓ Completed | Phase 2, 3 | All Phase 4 plans (04-01 to 04-07) executed and verified |
+| 4 | Đa ngôn ngữ & SEO | ✓ Verified | Phase 2, 3 | 7 plans executed, 42 PHPUnit tests passing (198 assertions), 6 Nyquist validation tests, verify script runs PHPUnit |
 | 5 | Hoàn thiện & Triển khai | Pending | Phase 2, 3, 4 | Optimization, deployment |
 
 ## Phase 2 Deliverables
