@@ -2,21 +2,21 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: "**Gồm:** Phase 0 → Phase 5"
-status: Phase 3 execution complete (78 tests pass, verify script created)
-stopped_at: Phase 3 ready — all code committed
-last_updated: "2026-06-28T18:00:00.000Z"
+status: Phase 4 complete — ready for Phase 5
+stopped_at: Phase 4 all plans verified, verify-phase4.ps1 added
+last_updated: "2026-06-29T21:09:00.000Z"
 progress:
   total_phases: 6
-  completed_phases: 4
-  total_plans: 16
-  completed_plans: 16
-  percent: 67
+  completed_phases: 5
+  total_plans: 17
+  completed_plans: 17
+  percent: 83
 ---
 
 # STATE.md
 
 **Version:** 1.4
-**Status:** Phase 2 — Completed and verified | Phase 3 — Completed and verified (78 tests, 158 assertions)
+**Status:** Executing Phase 04 - Ready to advance to Phase 5
 
 ## Milestones
 
@@ -27,40 +27,45 @@ progress:
 ## Phase Status
 
 | # | Phase | Status | Dependencies | Notes |
-|---|-------|--------|-------------|-------|
+|---|---|---|---|---|
 | 0 | Hoàn thiện Frontend Template | ✓ Verified | — | product-detail.html, store.html, category.html, b2b.css |
 | 1 | Nền tảng (Foundation) | ✓ Verified | Phase 0 | Laravel + DB + Filament + Blade views + Controllers + Routes |
 | 2 | Quản lý sản phẩm (Product Management) | ✓ Verified | Phase 1 | Models, Seeders, Filament Resources, Frontend views, Tests |
 | 3 | Nội dung & Liên hệ (Content & Contact) | ✓ Verified | Phase 1 | 5 plans executed, 78 tests passing (158 assertions), verify script added |
-| 4 | Đa ngôn ngữ & SEO | Pending | Phase 2, 3 | i18n + SEO basics |
+| 4 | Đa ngôn ngữ & SEO | ✓ Completed | Phase 2, 3 | All Phase 4 plans (04-01 to 04-07) executed and verified |
 | 5 | Hoàn thiện & Triển khai | Pending | Phase 2, 3, 4 | Optimization, deployment |
 
 ## Phase 2 Deliverables
 
 ### Plan 02-01 — Foundation (Wave 1)
+
 - 3 Eloquent models: Category, Brand, Product with #[Fillable], casts, relationships
 - intervention/image-laravel ^4.0 installed
 - [SUMMARY](.planning/phases/02-qu-n-l-s-n-ph-m-product-management/02-01-SUMMARY.md)
 
 ### Plan 02-02 — Seeders (Wave 2)
+
 - CategorySeeder: 3-level hierarchy (22 categories)
 - BrandSeeder: 5 brands (Hikvision, Dahua, Axis, Bosch, Honeywell)
 - ProductSeeder: 10+ products with array-of-objects technical_specs
 - [SUMMARY](.planning/phases/02-qu-n-l-s-n-ph-m-product-management/02-02-SUMMARY.md)
 
 ### Plan 02-03 — Category & Brand Resources (Wave 2)
+
 - Filament CategoryResource: form (name, slug, parent_id, image, is_active), table (ordered)
 - Filament BrandResource: form (name, slug, logo, website, is_active), table
 - CRUD tests for both resources + navigation test
 - [SUMMARY](.planning/phases/02-qu-n-l-s-n-ph-m-product-management/02-03-SUMMARY.md)
 
 ### Plan 02-04 — Product Resource (Wave 3)
+
 - Filament ProductResource: 3-level cascading category selects, image upload, brochure, specs Repeater
 - Intervention Image resize (600x600) afterSave hook
 - CRUD tests + specs format test
 - [SUMMARY](.planning/phases/02-qu-n-l-s-n-ph-m-product-management/02-04-SUMMARY.md)
 
 ### Plan 02-05 — Frontend & HTTP Tests (Wave 3)
+
 - Product detail view with array-of-objects specs, gallery, brochure, related products
 - Category tree sidebar component
 - 5 HTTP test files (homepage, category, product detail, search, card rendering)
@@ -88,30 +93,35 @@ progress:
 ## Phase 3 Deliverables
 
 ### Plan 03-01 — Models, Mailables, Seeders (Wave 1) ✓
+
 - 4 models (Post, Project, Contact, Inquiry) with #[Fillable], casts, relationships
 - 2 Mailable classes (AdminNotification, CustomerConfirmation) + 2 email Blade templates
 - PostSeeder (3-5 posts), ProjectSeeder (3-5 projects)
 - [SUMMARY](.planning/phases/03/03-01-SUMMARY.md)
 
 ### Plan 03-02 — Post & Project Resources (Wave 2) ✓
+
 - PostResource (CRUD) with RichEditor content, image upload, ToggleColumn for is_published
 - ProjectResource (CRUD) with FileUpload multiple for JSON images gallery
 - PostResourceTest + ProjectResourceTest
 - [SUMMARY](.planning/phases/03/03-02-SUMMARY.md)
 
 ### Plan 03-03 — Inquiry & Contact Resources (Wave 2) ✓
+
 - InquiryResource (read-only) with ViewRecord, auto-mark is_read, DeleteAction
 - ContactResource (read-only) with ViewRecord, auto-mark is_read, DeleteAction
 - InquiryResourceTest + ContactResourceTest
 - [SUMMARY](.planning/phases/03/03-03-SUMMARY.md)
 
 ### Plan 03-04 — Post & Project Frontend (Wave 3) ✓
+
 - PostController with index/paginate + show/slug, 2 Blade views (index+show)
 - ProjectController with index/paginate + show/slug, 2 Blade views (index+show with gallery)
 - Routes: /tin-tuc, /du-an — PostFrontendTest + ProjectFrontendTest
 - [SUMMARY](.planning/phases/03/03-04-SUMMARY.md)
 
 ### Plan 03-05 — Contact, Quote Modal, Navbar, Email, Tests (Wave 3) ✓
+
 - ContactController (show+store), updated contact form (no subject, +phone+company, Google Maps preserved)
 - InquiryController (store), quote modal on product detail with session flash re-open
 - Navbar links (Tin tức, Dự án), MailTest, SeederTest, NavbarTest, ContactFormTest, InquiryFormTest
