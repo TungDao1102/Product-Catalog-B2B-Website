@@ -1,6 +1,6 @@
 # ROADMAP.md
 
-## Version 1.0 — Product Catalog MVP
+## Version 1.0 — QTM Việt MVP
 
 ### Phase 0: Hoàn thiện Frontend Template
 **Mục tiêu:** Hoàn thiện giao diện tĩnh (HTML/CSS/JS) trong `template-frontend/` — build các trang và components còn thiếu cho catalog B2B.

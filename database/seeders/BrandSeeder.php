@@ -13,7 +13,7 @@ class BrandSeeder extends Seeder
     public function run(): void
     {
         Brand::create([
-            'name' => 'Hikvision',
+            'name' => ['en' => 'Hikvision', 'vi' => 'Hikvision'],
             'slug' => 'hikvision',
             'description' => [
                 'vi' => 'Hikvision là nhà sản xuất thiết bị giám sát và an ninh hàng đầu thế giới, cung cấp giải pháp camera IP, đầu ghi hình và phần mềm quản lý video chuyên nghiệp.',
@@ -25,7 +25,7 @@ class BrandSeeder extends Seeder
         ]);
 
         Brand::create([
-            'name' => 'Dahua',
+            'name' => ['en' => 'Dahua', 'vi' => 'Dahua'],
             'slug' => 'dahua',
             'description' => [
                 'vi' => 'Dahua Technology là thương hiệu thiết bị an ninh và giám sát hàng đầu, chuyên về camera AI, thiết bị lưu trữ và giải pháp IoT an ninh.',
@@ -37,7 +37,7 @@ class BrandSeeder extends Seeder
         ]);
 
         Brand::create([
-            'name' => 'Axis Communications',
+            'name' => ['en' => 'Axis Communications', 'vi' => 'Axis Communications'],
             'slug' => 'axis',
             'description' => [
                 'vi' => 'Axis Communications tiên phong trong lĩnh vực camera mạng IP, cung cấp các giải pháp giám sát chất lượng cao cho doanh nghiệp và tổ chức.',
@@ -49,7 +49,7 @@ class BrandSeeder extends Seeder
         ]);
 
         Brand::create([
-            'name' => 'Bosch Security',
+            'name' => ['en' => 'Bosch Security', 'vi' => 'Bosch Security'],
             'slug' => 'bosch',
             'description' => [
                 'vi' => 'Bosch Security Systems cung cấp giải pháp an ninh tích hợp bao gồm camera giám sát, hệ thống báo động và quản lý truy cập.',
@@ -61,7 +61,7 @@ class BrandSeeder extends Seeder
         ]);
 
         Brand::create([
-            'name' => 'Honeywell',
+            'name' => ['en' => 'Honeywell', 'vi' => 'Honeywell'],
             'slug' => 'honeywell',
             'description' => [
                 'vi' => 'Honeywell là tập đoàn đa quốc gia cung cấp giải pháp an ninh, báo cháy và tự động hóa tòa nhà hàng đầu thế giới.',

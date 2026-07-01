@@ -86,7 +86,7 @@
                 <div class="project-gallery wow fadeInUp" data-wow-delay="0.1s">
                     <div class="project-gallery-main">
                         @php $mainImage = $project->images[0] ?? null; @endphp
-                        <img src="{{ $mainImage ? asset('storage/' . $mainImage) : asset('img/product-1.jpg') }}" alt="{{ $project->title }}" id="mainImage">
+                        <img loading="lazy" src="{{ $mainImage ? asset('storage/' . $mainImage) : asset('img/product-1.jpg') }}" alt="{{ $project->title }}" id="mainImage">
                         <button class="gallery-nav gallery-nav-prev" onclick="prevImage()" aria-label="{{ __('common.gallery_prev') }}">
                             <i class="bi bi-chevron-left"></i>
                         </button>
@@ -98,7 +98,7 @@
                     <div class="project-gallery-thumbs" id="galleryThumbs">
                         @foreach($project->images as $index => $image)
                             <div class="project-thumb {{ $index === 0 ? 'active' : '' }}" onclick="selectImage({{ $index }})">
-                                <img src="{{ asset('storage/' . $image) }}" alt="{{ __('common.gallery_image') }} {{ $index + 1 }}">
+                                <img loading="lazy" src="{{ asset('storage/' . $image) }}" alt="{{ __('common.gallery_image') }} {{ $index + 1 }}">
                             </div>
                         @endforeach
                     </div>

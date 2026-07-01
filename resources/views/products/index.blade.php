@@ -25,37 +25,38 @@
             <!-- Filter Sidebar -->
             <div class="col-lg-3">
                 <div class="filter-sidebar wow fadeInUp" data-wow-delay="0.1s">
-                    <!-- Search -->
-                    <div class="filter-section">
-                        <h5>{{ __('navigation.search') }}</h5>
-                        <form action="{{ route('products.index') }}" method="GET">
+                    <form action="{{ route('products.index') }}" method="GET">
+                        <!-- Search -->
+                        <div class="filter-section">
+                            <h5>{{ __('navigation.search') }}</h5>
                             <div class="search-box">
                                 <input type="text" name="search" class="form-control" placeholder="{{ __('common.search_placeholder') }}" value="{{ request('search') }}">
                                 <button type="submit"><i class="bi bi-search"></i></button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
 
-                    <!-- Category Tree -->
-                    <div class="filter-section">
-                        <x-category-tree :categories="$categories" :activeCategorySlug="request('category')" />
-                    </div>
+                        <!-- Category Tree -->
+                        <div class="filter-section">
+                            <x-category-tree :categories="$categories" :activeCategorySlug="request('category')" />
+                        </div>
 
-                    <!-- Brand Filter -->
-                    @if($brands->count() > 0)
-                    <div class="filter-section">
-                        <h5>{{ __('products.brand') }}</h5>
-                        @foreach($brands as $brand)
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="brand{{ $brand->id }}"
-                                    {{ in_array($brand->slug, (array)request('brands', [])) ? 'checked' : '' }}>
-                                <label class="form-check-label" for="brand{{ $brand->id }}">{{ $brand->name }}</label>
-                            </div>
-                        @endforeach
-                    </div>
-                    @endif
+                        <!-- Brand Filter -->
+                        @if($brands->count() > 0)
+                        <div class="filter-section">
+                            <h5>{{ __('products.brand') }}</h5>
+                            @foreach($brands as $brand)
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="brands[]" value="{{ $brand->slug }}"
+                                        id="brand{{ $brand->id }}"
+                                        {{ in_array($brand->slug, (array)request('brands', [])) ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="brand{{ $brand->id }}">{{ $brand->name }}</label>
+                                </div>
+                            @endforeach
+                        </div>
+                        @endif
 
-                    <a href="{{ route('products.index') }}" class="btn btn-primary w-100 rounded-pill py-2">{{ __('common.apply_filters') }}</a>
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill py-2">{{ __('common.apply_filters') }}</button>
+                    </form>
                 </div>
             </div>
 
@@ -74,6 +75,9 @@
                         @if(request('search'))
                             <input type="hidden" name="search" value="{{ request('search') }}">
                         @endif
+                        @foreach((array)request('brands', []) as $brand)
+                            <input type="hidden" name="brands[]" value="{{ $brand }}">
+                        @endforeach
                         <select name="sort" class="form-select form-select-sm w-auto" onchange="this.form.submit()">
                             <option value="default" {{ request('sort') == 'default' ? 'selected' : '' }}>{{ __('common.sort') }}: {{ __('common.sort_default') }}</option>
                             <option value="name_asc" {{ request('sort') == 'name_asc' ? 'selected' : '' }}>{{ __('common.sort_name_asc') }}</option>
@@ -91,7 +95,7 @@
                                 @if($product->is_featured)
                                     <span class="product-badge">{{ __('common.featured') }}</span>
                                 @endif
-                                <img class="card-img" src="{{ isset($product->images[0]) ? asset('storage/' . $product->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
+                                <img class="card-img" loading="lazy" src="{{ $product->imageUrl(0) }}" alt="{{ $product->name }}" width="300" height="200" style="object-fit:cover;">
                                 <div class="card-body">
                                     <div class="card-brand">{{ $product->brand->name ?? $product->category->name ?? '' }}</div>
                                     <h5 class="card-title"><a href="{{ route('products.show', $product->slug) }}">{{ $product->name }}</a></h5>

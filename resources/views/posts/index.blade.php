@@ -25,7 +25,7 @@
             @forelse($posts as $post)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="product-card-b2b">
-                        <img class="card-img" src="{{ $post->image ? asset('storage/' . $post->image) : asset('img/product-1.jpg') }}" alt="{{ $post->title }}">
+                        <img class="card-img" loading="lazy" src="{{ $post->image ? asset('storage/' . $post->image) : asset('img/product-1.jpg') }}" alt="{{ $post->title }}">
                         <div class="card-body">
                             <p class="text-muted small mb-2">
                                 <i class="bi bi-calendar me-1"></i>

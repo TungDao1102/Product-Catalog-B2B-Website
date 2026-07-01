@@ -27,11 +27,11 @@
                     @endif
                     <a href="{{ route('posts.index') }}" class="nav-item nav-link {{ request()->routeIs('posts.*') ? 'active' : '' }}">{{ __('navigation.posts') }}</a>
                     <a href="{{ route('projects.index') }}" class="nav-item nav-link {{ request()->routeIs('projects.*') ? 'active' : '' }}">{{ __('navigation.projects') }}</a>
+                    <a href="{{ route('about') }}" class="nav-item nav-link {{ request()->routeIs('about') ? 'active' : '' }}">{{ __('navigation.about') }}</a>
                     <a href="{{ route('contact') }}" class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">{{ __('navigation.contact') }}</a>
                 </div>
                 <div class="border-start ps-4 d-none d-lg-block">
                     @include('partials.language-switcher')
-                    <a href="{{ route('products.index') }}" class="btn btn-sm p-0"><i class="fa fa-search"></i></a>
                 </div>
             </div>
         </nav>

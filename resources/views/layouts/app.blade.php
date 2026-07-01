@@ -17,12 +17,12 @@
     <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale() === 'vi' ? 'vi_VN' : 'en_US') }}" />
 
     <!-- Alternate Language Links -->
-    <link rel="alternate" hreflang="vi" href="{{ url('/vi' . request()->getPathInfo()) }}" />
-    <link rel="alternate" hreflang="en" href="{{ url('/en' . request()->getPathInfo()) }}" />
-    <link rel="alternate" hreflang="x-default" href="{{ url('/vi' . request()->getPathInfo()) }}" />
+    <link rel="alternate" hreflang="vi" href="{{ url(preg_replace('#^/[a-z]{2}(/|$)#', '/vi$1', request()->getPathInfo())) }}" />
+    <link rel="alternate" hreflang="en" href="{{ url(preg_replace('#^/[a-z]{2}(/|$)#', '/en$1', request()->getPathInfo())) }}" />
+    <link rel="alternate" hreflang="x-default" href="{{ url(preg_replace('#^/[a-z]{2}(/|$)#', '/vi$1', request()->getPathInfo())) }}" />
 
     <!-- Favicon -->
-    <link href="{{ asset('img/favicon.ico') }}" rel="icon">
+    <link href="{{ asset('favicon.ico') }}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Products\Pages;
 
 use App\Filament\Resources\Products\ProductResource;
 use Filament\Resources\Pages\CreateRecord;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Laravel\Facades\Image;
 use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
@@ -26,6 +27,9 @@ class CreateProduct extends CreateRecord
     {
         $product = $this->getRecord();
         $images = $product->images ?? [];
+
+        Cache::forget('home.featured_products');
+        Cache::forget('home.latest_products');
 
         foreach ($images as $imagePath) {
             $fullPath = Storage::disk('public')->path($imagePath);

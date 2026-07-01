@@ -6,6 +6,7 @@ return [
     'categories' => 'Danh mục',
     'posts' => 'Tin tức',
     'projects' => 'Dự án',
+    'about' => 'Về chúng tôi',
     'contact' => 'Liên hệ',
     'search' => 'Tìm kiếm',
     'quick_links' => 'Liên kết nhanh',

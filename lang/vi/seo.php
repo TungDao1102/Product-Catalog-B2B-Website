@@ -6,6 +6,7 @@ return [
     'products_title' => 'Sản phẩm',
     'posts_title' => 'Tin tức',
     'projects_title' => 'Dự án',
+    'about_description' => 'Tìm hiểu thêm về công ty, sứ mệnh và giá trị của chúng tôi',
     'contact_title' => 'Liên hệ',
     'contact_description' => 'Liên hệ với chúng tôi để được tư vấn và báo giá sản phẩm',
     'site_name' => config('app.name'),

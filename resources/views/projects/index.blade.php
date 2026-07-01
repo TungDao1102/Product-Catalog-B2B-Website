@@ -25,7 +25,7 @@
             @forelse($projects as $project)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="product-card-b2b">
-                        <img class="card-img" src="{{ isset($project->images[0]) ? asset('storage/' . $project->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $project->title }}">
+                        <img class="card-img" loading="lazy" src="{{ isset($project->images[0]) ? asset('storage/' . $project->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $project->title }}">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="{{ route('projects.show', $project->slug) }}">{{ $project->title }}</a>

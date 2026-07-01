@@ -98,7 +98,7 @@
                                 @if($product->is_featured)
                                     <span class="product-badge">{{ __('common.featured') }}</span>
                                 @endif
-                                <img class="card-img" src="{{ isset($product->images[0]) ? asset('storage/' . $product->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
+                                <img class="card-img" loading="lazy" src="{{ isset($product->images[0]) ? asset('storage/' . $product->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
                                 <div class="card-body">
                                     <div class="card-brand">{{ $product->brand->name ?? '' }}</div>
                                     <h5 class="card-title"><a href="{{ route('products.show', $product->slug) }}">{{ $product->name }}</a></h5>

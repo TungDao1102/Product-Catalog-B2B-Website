@@ -17,7 +17,7 @@ class NavbarTest extends TestCase
 
     public function test_navbar_has_tin_tuc_link(): void
     {
-        $response = $this->get(route('home'));
+        $response = $this->get('/vi');
 
         $response->assertStatus(200);
         $response->assertSee('Tin tức');
@@ -25,7 +25,7 @@ class NavbarTest extends TestCase
 
     public function test_navbar_has_du_an_link(): void
     {
-        $response = $this->get(route('home'));
+        $response = $this->get('/vi');
 
         $response->assertStatus(200);
         $response->assertSee('Dự án');

@@ -89,8 +89,7 @@
             <div class="col-lg-7">
                 <div class="product-gallery wow fadeInUp" data-wow-delay="0.1s">
                     <div class="product-gallery-main">
-                        @php $mainImage = $product->images[0] ?? null; @endphp
-                        <img src="{{ $mainImage ? asset('storage/' . $mainImage) : asset('img/product-1.jpg') }}" alt="{{ $product->name }}" id="mainImage">
+                        <img loading="lazy" src="{{ $product->imageUrl(0) }}" alt="{{ $product->name }}" id="mainImage">
                         <button class="gallery-nav gallery-nav-prev" onclick="prevImage()" aria-label="{{ __('common.gallery_prev') }}">
                             <i class="bi bi-chevron-left"></i>
                         </button>
@@ -102,7 +101,7 @@
                     <div class="product-gallery-thumbs" id="galleryThumbs">
                         @foreach($product->images as $index => $image)
                             <div class="product-thumb {{ $index === 0 ? 'active' : '' }}" onclick="selectImage({{ $index }})">
-                                <img src="{{ asset('storage/' . $image) }}" alt="{{ __('common.gallery_image') }} {{ $index + 1 }}">
+                                <img loading="lazy" src="{{ $product->imageUrl($index) }}" alt="{{ __('common.gallery_image') }} {{ $index + 1 }}">
                             </div>
                         @endforeach
                     </div>
@@ -286,7 +285,7 @@
                             @if($related->is_featured)
                                 <span class="product-badge">{{ __('common.featured') }}</span>
                             @endif
-                            <img class="card-img" src="{{ isset($related->images[0]) ? asset('storage/' . $related->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $related->name }}">
+                            <img class="card-img" loading="lazy" src="{{ $related->imageUrl(0) }}" alt="{{ $related->name }}">
                             <div class="card-body">
                                 <div class="card-brand">{{ $related->brand->name ?? $related->category->name ?? '' }}</div>
                                 <h5 class="card-title"><a href="{{ route('products.show', $related->slug) }}">{{ $related->name }}</a></h5>
@@ -310,7 +309,11 @@
 @push('scripts')
 <script>
     @if(count($product->images ?? []) > 0)
-    var galleryImages = {!! json_encode($product->images) !!};
+    var galleryImages = [
+        @foreach($product->images as $index => $image)
+            '{{ $product->imageUrl($index) }}'{{ $loop->last ? '' : ',' }}
+        @endforeach
+    ];
     @else
     var galleryImages = ['{{ asset("img/product-1.jpg") }}'];
     @endif

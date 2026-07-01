@@ -33,7 +33,7 @@
 
                     @if($post->image)
                         <div class="mb-4">
-                            <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="img-fluid rounded">
+                            <img loading="lazy" src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="img-fluid rounded">
                         </div>
                     @endif
 

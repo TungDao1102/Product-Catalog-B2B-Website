@@ -6,6 +6,7 @@ return [
     'categories' => 'Categories',
     'posts' => 'Blog',
     'projects' => 'Projects',
+    'about' => 'About',
     'contact' => 'Contact',
     'search' => 'Search',
     'quick_links' => 'Quick Links',

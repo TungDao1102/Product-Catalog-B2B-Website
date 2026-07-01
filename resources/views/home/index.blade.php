@@ -56,9 +56,9 @@
             <h1 class="display-6">{{ __('home.featured_products_subtitle') }}</h1>
         </div>
         <div class="owl-carousel product-carousel wow fadeInUp" data-wow-delay="0.5s">
-            @forelse($featuredProducts as $product)
+                    @forelse($featuredProducts as $product)
                 <a href="{{ route('products.show', $product->slug) }}" class="d-block product-item rounded">
-                    <img src="{{ isset($product->images[0]) ? asset('storage/' . $product->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
+                    <img loading="lazy" src="{{ $product->imageUrl(0) }}" alt="{{ $product->name }}" width="300" height="300" style="object-fit:cover;">
                     <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
                         <h4 class="text-primary">{{ $product->name }}</h4>
                         <span class="text-body">{{ $product->short_description }}</span>
@@ -66,14 +66,13 @@
                 </a>
             @empty
                 <a href="" class="d-block product-item rounded">
-                    <img src="{{ asset('img/product-1.jpg') }}" alt="">
+                    <img loading="lazy" src="{{ asset('img/product-1.jpg') }}" alt="">
                     <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
-                        <h4 class="text-primary">{{ __('home.product_placeholder') }} 1</h4>
                         <span class="text-body">{{ __('home.product_updating') }}</span>
                     </div>
                 </a>
                 <a href="" class="d-block product-item rounded">
-                    <img src="{{ asset('img/product-2.jpg') }}" alt="">
+                    <img loading="lazy" src="{{ asset('img/product-2.jpg') }}" alt="">
                     <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
                         <h4 class="text-primary">{{ __('home.product_placeholder') }} 2</h4>
                         <span class="text-body">{{ __('home.product_updating') }}</span>
@@ -92,12 +91,12 @@
             <div class="col-lg-6">
                 <div class="row g-3">
                     <div class="col-6 text-end">
-                        <img class="img-fluid bg-white w-100 mb-3 wow fadeIn" data-wow-delay="0.1s" src="{{ asset('img/about-1.jpg') }}" alt="">
-                        <img class="img-fluid bg-white w-50 wow fadeIn" data-wow-delay="0.2s" src="{{ asset('img/about-3.jpg') }}" alt="">
+                        <img loading="lazy" class="img-fluid bg-white w-100 mb-3 wow fadeIn" data-wow-delay="0.1s" src="{{ asset('img/about-1.jpg') }}" alt="">
+                        <img loading="lazy" class="img-fluid bg-white w-50 wow fadeIn" data-wow-delay="0.2s" src="{{ asset('img/about-3.jpg') }}" alt="">
                     </div>
                     <div class="col-6">
-                        <img class="img-fluid bg-white w-50 mb-3 wow fadeIn" data-wow-delay="0.3s" src="{{ asset('img/about-4.jpg') }}" alt="">
-                        <img class="img-fluid bg-white w-100 wow fadeIn" data-wow-delay="0.4s" src="{{ asset('img/about-2.jpg') }}" alt="">
+                        <img loading="lazy" class="img-fluid bg-white w-50 mb-3 wow fadeIn" data-wow-delay="0.3s" src="{{ asset('img/about-4.jpg') }}" alt="">
+                        <img loading="lazy" class="img-fluid bg-white w-100 wow fadeIn" data-wow-delay="0.4s" src="{{ asset('img/about-2.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -108,7 +107,7 @@
                 </div>
                 <div class="row g-3 mb-4">
                     <div class="col-sm-4">
-                        <img class="img-fluid bg-white w-100" src="{{ asset('img/about-5.jpg') }}" alt="">
+                        <img loading="lazy" class="img-fluid bg-white w-100" src="{{ asset('img/about-5.jpg') }}" alt="">
                     </div>
                     <div class="col-sm-8">
                         <h5>{{ __('home.quality_commitment') }}</h5>
@@ -122,7 +121,7 @@
                         <p class="mb-0">{{ __('home.experience_text') }}</p>
                     </div>
                     <div class="col-sm-4">
-                        <img class="img-fluid bg-white w-100" src="{{ asset('img/about-6.jpg') }}" alt="">
+                        <img loading="lazy" class="img-fluid bg-white w-100" src="{{ asset('img/about-6.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -145,7 +144,7 @@
                         @if($product->is_featured)
                                     <span class="product-badge">{{ __('common.featured') }}</span>
                         @endif
-                        <img class="card-img" src="{{ isset($product->images[0]) ? asset('storage/' . $product->images[0]) : asset('img/product-1.jpg') }}" alt="{{ $product->name }}">
+                        <img class="card-img" loading="lazy" src="{{ $product->imageUrl(0) }}" alt="{{ $product->name }}" width="300" height="200" style="object-fit:cover;">
                         <div class="card-body">
                             <div class="card-brand">{{ $product->brand->name ?? '' }}</div>
                             <h5 class="card-title"><a href="{{ route('products.show', $product->slug) }}">{{ $product->name }}</a></h5>
@@ -175,7 +174,7 @@
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
-                <img class="img-fluid" src="{{ asset('img/article.jpg') }}" alt="">
+                <img class="img-fluid" loading="lazy" src="{{ asset('img/article.jpg') }}" alt="">
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                 <div class="section-title">
@@ -199,7 +198,7 @@
         smartSpeed: 1000,
         margin: 45,
         dots: false,
-        loop: true,
+        loop: false,
         nav: true,
         navText: [
             '<i class="bi bi-arrow-left"></i>',

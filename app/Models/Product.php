@@ -38,6 +38,41 @@ class Product extends Model implements Sitemapable
         return $this->belongsTo(Brand::class);
     }
 
+    /**
+     * Get the URL for a product image by index.
+     *
+     * - Seeded images are stored as "img/products/xxx.jpg" (public/img/)
+     * - Admin-uploaded images are stored as "products/xxx.jpg" (storage/app/public/products/)
+     *
+     * Always falls back to a placeholder if the file doesn't exist,
+     * avoiding slow 404s through the full Laravel stack.
+     */
+    public function imageUrl(int $index = 0): string
+    {
+        $path = $this->images[$index] ?? null;
+
+        if (! $path) {
+            return asset('img/product-1.jpg');
+        }
+
+        $url = str_starts_with($path, 'img/')
+            ? asset($path)
+            : asset('storage/' . $path);
+
+        // file_exists is fast (microseconds, OS-cached).
+        // Without this check, php artisan serve forwards missing files
+        // through the full Laravel bootstrap stack, taking 2-3s to 404.
+        if (str_starts_with($path, 'img/') && ! file_exists(public_path($path))) {
+            return asset('img/product-1.jpg');
+        }
+
+        if (! str_starts_with($path, 'img/') && ! file_exists(storage_path('app/public/' . $path))) {
+            return asset('img/product-1.jpg');
+        }
+
+        return $url;
+    }
+
     public function toSitemapTag(): Url|string|array
     {
         return Url::create(route('products.show', ['locale' => 'vi', 'slug' => $this->slug]))

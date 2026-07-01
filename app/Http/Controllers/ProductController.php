@@ -21,6 +21,14 @@ class ProductController extends Controller
             }
         }
 
+        // Filter by brands
+        if ($brandSlugs = request('brands')) {
+            $brandSlugs = (array) $brandSlugs;
+            $query->whereHas('brand', function ($q) use ($brandSlugs) {
+                $q->whereIn('slug', $brandSlugs);
+            });
+        }
+
         // Search
         if ($search = request('search')) {
             $query->where(function ($q) use ($search) {
@@ -90,7 +98,7 @@ class ProductController extends Controller
         $seo = [
             'title' => $product->getTranslation('name', app()->getLocale()),
             'description' => strip_tags($product->getTranslation('short_description', app()->getLocale()) ?? ''),
-            'image' => isset($product->images[0]) ? asset('storage/' . $product->images[0]) : asset('img/og-default.jpg'),
+            'image' => $product->imageUrl(0),
             'type' => 'product',
         ];
 

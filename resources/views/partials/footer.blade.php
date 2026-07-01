@@ -49,9 +49,9 @@
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 &copy; {{ date('Y') }} <a class="fw-medium" href="{{ route('home') }}">{{ config('app.name') }}</a>, All Right Reserved.
             </div>
-            <div class="col-md-6 text-center text-md-end">
-                Designed By <a class="fw-medium" href="https://htmlcodex.com">HTML Codex</a>
-            </div>
+            <!-- <div class="col-md-6 text-center text-md-end">
+                Designed By <a class="fw-medium" ></a>
+            </div> -->
         </div>
     </div>
 </div>
